@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "0ef829b3-8ef8-4e01-81f2-d2bcdbe64ad8",
+		"name": "athlete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/athlete/publish [AUTH]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/publish",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/invite [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"email\": \"\",\r\n    \"phone\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/invite",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						"invite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/:id [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/:id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/:id/publish [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/:id/publish",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						":id",
+						"publish"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/:id/plan [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plan_template_id\": 0,\r\n    \"min\": 0,\r\n    \"max\": 0,\r\n    \"date\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/:id/plan",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						":id",
+						"plan"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/:id/messages [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/:id/messages",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						":id",
+						"messages"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/:id/note [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/:id/note",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						":id",
+						"note"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/:id/note [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"note\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/:id/note",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						":id",
+						"note"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/athlete/:id/reinvite [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/athlete/:id/reinvite",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"athlete",
+						":id",
+						"reinvite"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,28 @@
+.make-responsive-grid-columns() {
+	.col(@index) {
+		@item: ~'.@{ant-prefix}-col-@{index}, .@{ant-prefix}-col-xs-@{index}, .@{ant-prefix}-col-sm-@{index}, .@{ant-prefix}-col-md-@{index}, .@{ant-prefix}-col-lg-@{index}';
+		.col((@index + 1), @item);
+	}
+	.col(@index, @list) when (@index =< @grid-columns) {
+		@item: ~'.@{ant-prefix}-col-@{index}, .@{ant-prefix}-col-xs-@{index}, .@{ant-prefix}-col-sm-@{index}, .@{ant-prefix}-col-md-@{index}, .@{ant-prefix}-col-lg-@{index}';
+		.col((@index + 1), ~'@{list}, @{item}');
+	}
+	.col(@index, @list) when (@index > @grid-columns) {
+		@{list} {
+			@media screen and (max-width: @screen-xs) {
+				padding-left: (@margin-mobile);
+				padding-right: (@margin-mobile);
+			}
+		}
+	}
+	.col(1);
+}
+
+.make-responsive-grid-columns();
+
+.ant-row {
+	@media screen and (max-width: @screen-xs) {
+		margin-left: -@margin-mobile;
+		margin-right: -@margin-mobile;
+	}
+}

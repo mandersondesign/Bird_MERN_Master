@@ -1,0 +1,47 @@
+@import '../../styles/index';
+@import '../../styles/mixins';
+
+.header {
+	position: relative;
+	overflow: hidden;
+	&-image {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: absolute;
+		overflow: hidden;
+		flex: 0 0 auto;
+		transition: all .3s ease-in-out;
+		height: 100%;
+		width: 100%;
+		&.hover {
+			transform: scale(1.1)
+		}
+	}
+}
+
+.horizontal {
+	composes: header;
+	flex: 0 0 108px;
+	&-big {
+		composes: header;
+		flex: 0 0 151px;
+	}
+}
+.horizontalBiggest {
+	composes: header;
+	flex: 0 0 227px;
+	.responsive-max(@screen-sm-max, {
+		flex: 0 0 151px;
+	});
+}
+.vertical {
+	composes: header;
+	width: 157px;
+	position: absolute;
+	height: 100%;
+	overflow: hidden;
+	.responsive-max(@screen-md-max, {
+		width: 81px;
+	});
+}

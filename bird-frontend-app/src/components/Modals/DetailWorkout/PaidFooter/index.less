@@ -1,0 +1,240 @@
+.paidFooter {
+  position: relative;
+
+  li {
+    list-style: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .iconClose {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .container {
+    padding: 54px 0 22px 0;
+    border-radius: 7px;
+
+    p, h2, h3 {
+      text-align: left;
+      margin: 0;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      font-family: SFProDisplay-Bold;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      margin-bottom: 17px;
+    }
+
+    .subTitle {
+      font-family: SFProDisplay-Bold;
+      font-size: 10px;
+      letter-spacing: 0.6px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .desc {
+      font-family: SFProText-Regular;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: -0.2px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      width: 140px;
+      font-family: SFProText-Heavy;
+      font-size: 12px;
+      letter-spacing: 1px;
+      background-color: #f5e106;
+      border: none;
+      text-transform: uppercase;
+      height: 40px;
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
+  }
+
+  .firstStep {
+    position: relative;
+    height: 200px;
+
+    .iconChart, .phone {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .phone {
+      background-color: #D5D5D5;
+      height: 100%;
+      opacity: 0.8;
+      border-radius: 7px;
+      background-image: url("./chart.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      -webkit-filter: blur(5px);
+      filter: blur(5px);
+    }
+
+    .bodyAbs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      margin: 0 auto;
+      z-index: 100;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      padding: 0 10px;
+
+      // @media (max-width: 400px) {
+        // margin-top: 0;
+      // }
+    }
+
+    p, h2 {
+      text-align: center;
+    }
+  }
+
+  .secontStep {
+    padding-left: 35px;
+    background-color: #B9D1EB;
+    @media (max-width: 560px) {
+      padding-right: 35px;
+    }
+
+    ul {
+      width: 370px;
+      @media (max-width: 560px) {
+        width: auto;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+
+        p {
+          font-family: SFProText-Regular;
+          font-size: 14px;
+          line-height: 19px;
+          letter-spacing: -0.2px;
+          font-weight: normal;
+          margin-top: 10px;
+        }
+
+        .wrapperImg {
+          width: 10px;
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .iconMobile {
+      position: absolute;
+      right: 0;
+      top: 90px;
+    }
+
+    .secondBtn {
+      border-radius: 8px;
+      background-color: black;
+      color: #F5E106;
+      width: 225px;
+      margin-top: 50px;
+      &:hover {
+        color: black;
+      }
+      @media (max-width: 450px) {
+        white-space: initial;
+        width: 100%;
+        height: fit-content;
+        padding: 10px 15px;
+      }
+    }
+
+    .subTitleStripe {
+      margin-top: 20px;
+    }
+
+    .formStripe {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 10px;
+      @media (max-width: 560px) {
+        flex-direction: column;
+      }
+
+      .wrapperInput {
+        @media (max-width: 560px) {
+          margin-bottom: 10px;
+          width: 100%;
+        }
+
+        .wrapperStripeElement {
+          width: 185px;
+          background-color: #f9f9f9;
+          border-radius: 8px;
+          height: 40px;
+          padding-top: 12px;
+          padding-left: 10px;
+          @media (max-width: 560px) {
+            width: 100%;
+          }
+        }
+
+        .wrapperWidth {
+          width: 75px;
+          margin-left: 20px;
+          @media (max-width: 560px) {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+
+        .errorMessage {
+          width: 185px;
+        }
+      }
+    }
+
+    .errorMessage {
+      color: red;
+      margin-top: 5px;
+      height: 25px;
+      @media (max-width: 560px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .thirdBtn {
+      width: fit-content;
+      margin-top: 5px;
+    }
+  }
+}

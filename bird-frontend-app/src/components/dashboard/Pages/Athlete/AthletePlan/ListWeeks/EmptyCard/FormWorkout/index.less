@@ -1,0 +1,39 @@
+.formWorkout {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ECECEC;
+    
+    .btns {
+      display: flex;
+      align-items: center;
+    
+      .itemMenu {
+        color: #9B9B9B;
+        padding: 10px 15px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+  
+      .activeItemMenu {
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+      }
+    }
+
+    .iconClose {
+      font-size: 20px;
+      margin-right: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .body {
+    padding: 10px 15px;
+  }
+}

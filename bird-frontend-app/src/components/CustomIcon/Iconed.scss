@@ -1,0 +1,24 @@
+@import "../../styles/bem.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+$iconed-sides: (left, top, right, bottom);
+
+#{ bem-block(Iconed) } {
+}
+
+#{ bem-block(Iconed, left) }, #{ bem-block(Iconed, right) } {
+  @include flex(row, center);
+}
+
+#{ bem-block(Iconed, top) }, #{ bem-block(Iconed, bottom) } {
+  @include flex(column, center);
+}
+
+#{ bem-element(Iconed, icon, left) }, #{ bem-element(Iconed, icon, top) } {
+  order: -1;
+}
+
+#{ bem-element(Iconed, icon, right) }, #{ bem-element(Iconed, icon, bottom) } {
+  order: 1;
+}

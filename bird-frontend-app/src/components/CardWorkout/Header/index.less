@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  font-family: SFProText-Bold;
+
+  .day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    color: #a0a0a0;
+  }
+
+  .dayLabel {
+    color: #b1b1b1;
+    text-transform: uppercase;
+  }
+
+  .icons {
+    font-size: 20px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .date {
+      position: absolute;
+      opacity: 0;
+      z-index: -100;
+    }
+
+    span {
+      margin-left: 5px;
+    }
+
+    .icon {
+      transition: 1s ease;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .number {
+    color: black;
+    font-weight: bold;
+  }
+
+  .icon {
+    font-size: 20px;
+    color: #b8b8b8;
+    transition: 1s ease;
+    &:hover {
+      cursor: pointer;
+      color: black;
+    }
+  }
+}
+
+.popoverWorkout {
+  div[class~='ant-popover-inner-content'] {
+    border-radius: 7px;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+}

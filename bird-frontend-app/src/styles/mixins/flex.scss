@@ -1,0 +1,26 @@
+/// Applies flex box styles
+/// @group mixins
+///
+/// @param { string } $direction [row]
+/// @param { string } $align-items [center]
+/// @param { string } $align-content [null]
+/// @param { string } $justify-content [null]
+/// @param { string } $flex-wrap [null]
+///
+@mixin flex($direction: row, $align-items: center, $align-content: null, $justify-content: null, $flex-wrap: null) {
+  display: flex;
+  flex-direction: $direction;
+
+  @if ($align-items != null) {
+    align-items: $align-items;
+  }
+  @if ($align-content != null) {
+    align-content: $align-content;
+  }
+  @if ($justify-content != null) {
+    justify-content: $justify-content;
+  }
+  @if ($flex-wrap != null) {
+    flex-wrap: if($flex-wrap == true, wrap, if($flex-wrap == false, nowrap, $flex-wrap));
+  }
+}

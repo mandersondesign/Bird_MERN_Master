@@ -1,0 +1,39 @@
+/// Applies transition styles
+///
+/// @param { string | read | arglist } $props
+/// @param { number } $duration [.3s]
+/// @param { string } $timing-function [ease-in]
+/// @param { number } $delay [null]
+///
+/// @example
+///
+/// .foo {
+///   @include transition(color background-color, .3s);
+/// }
+///
+@mixin transition($props, $duration: .3s, $timing-function: ease-in, $delay: null) {
+  $props-type: type-of($props);
+
+  @if ($props-type != list and $props-type != arglist) {
+    $props: ($props,);
+  }
+
+  $props-length: length($props);
+
+  @if ($props-length > 0) {
+    $transitions: ();
+
+    @for $index from 1 through $props-length {
+      $prop: nth($props, $index);
+      $transition: $prop $duration $timing-function;
+
+      @if ($delay != null) {
+        $transition: append($transition, $delay);
+      }
+
+      $transitions: append($transitions, $transition, comma);
+    }
+
+    transition: $transitions;
+  }
+}

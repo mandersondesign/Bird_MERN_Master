@@ -1,0 +1,55 @@
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 17px;
+
+  .tooltip {
+    margin-left: 18px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .icon {
+    transition: 1s ease;
+    color: #B8B8B8;
+  }
+
+  .iconStarChoosed {
+    color: #f5e100;
+  }
+
+  .iconStar:hover {
+    color: #f5e100;
+  }
+
+  .date {
+    position: absolute;
+    opacity: 0;
+    z-index: -100;
+  }
+}
+
+.footerDatePicker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+
+  .clearBtn {
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .copyBtn {
+    background-color: #F5EB00;
+  }
+}
+
+div[class='ant-calendar-input-wrap'] {
+  display: none;
+}

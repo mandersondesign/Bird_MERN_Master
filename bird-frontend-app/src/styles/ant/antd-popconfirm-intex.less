@@ -1,0 +1,40 @@
+@btn-color: #F2F600;
+@btn-color-hover: #dade00;
+@btn-color-no-hover: #f7f7f7;
+
+div[class~='ant-popover'] {
+  div[class='ant-popover-inner-content'] {
+    min-width: 350px;
+    padding: 10px;
+  }
+
+  i[class='anticon anticon-exclamation-circle'] {
+    display: none;
+  }
+
+  div[class='ant-popover-message-title'] {
+    padding-left: 0;
+  }
+
+  div[class='ant-popover-buttons'] {
+    button[class='ant-btn ant-btn-sm'] {
+      background: none;
+      &:hover, &:focus {
+        background: none;
+        border-color: @btn-color;
+      }
+      &:active {
+        background-color: @btn-color-no-hover;
+      }
+    }
+
+    button[class~='ant-btn-primary'] {
+      background-color: @btn-color;
+      border-color: @btn-color;
+      color: black;
+      &:active {
+        background-color: @btn-color-hover;
+      }
+    }
+  }
+}

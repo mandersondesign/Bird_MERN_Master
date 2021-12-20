@@ -1,0 +1,8 @@
+{
+  "url": "https://devapi.bird.coach/v1/",
+  "url2": "https://devapi.bird.coach/v2/",
+  "socketUrl": "https://devapi.bird.coach/",
+  "stripeKey": "pk_test_tUcU1G3U8Hay3mcaTfwfji6S002ijgM2Nx",
+  "urlMarketing": "https://devmarketing.bird.coach/",
+  "showSignUp": true
+}

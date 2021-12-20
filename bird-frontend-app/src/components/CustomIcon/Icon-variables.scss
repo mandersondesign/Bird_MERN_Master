@@ -1,0 +1,33 @@
+@import "../Sized/Sized-functions.scss";
+@import "../../styles/variables.scss";
+
+$icon-size-small: 16px !default;
+$icon-size-medium: 22px !default;
+$icon-size-large: 28px !default;
+$icon-sizes: helios-sizes($icon-size-small, $icon-size-medium, $icon-size-large);
+
+$icon-primary-color-default: $grey !default;
+$icon-primary-color-active: $yellow !default;
+$icon-primary-color-danger: $red-dark !default;
+$icon-primary-color-default-light: #fff !default;
+$icon-primary-color-active-light: #fff !default;
+$icon-primary-color-danger-light: #fff !default;
+
+$icon-secondary-color-default: $grey-dark !default;
+$icon-secondary-color-active: $yellow-darkest !default;
+$icon-secondary-color-danger: $red-darkest !default;
+$icon-secondary-color-default-light: $grey-light !default;
+$icon-secondary-color-active-light: $yellow-lightest !default;
+$icon-secondary-color-danger-light: $red-light !default;
+
+$icon-colors: (
+  active: (primary: $icon-primary-color-active, secondary: $icon-secondary-color-active),
+  danger: (primary: $icon-primary-color-danger, secondary: $icon-secondary-color-danger),
+  default: (primary: $icon-primary-color-default, secondary: $icon-secondary-color-default)
+);
+
+$icon-colors-light: (
+  active: (primary: $icon-primary-color-active-light, secondary: $icon-secondary-color-active-light),
+  danger: (primary: $icon-primary-color-danger-light, secondary: $icon-secondary-color-danger-light),
+  default: (primary: $icon-primary-color-default-light, secondary: $icon-secondary-color-default-light)
+);

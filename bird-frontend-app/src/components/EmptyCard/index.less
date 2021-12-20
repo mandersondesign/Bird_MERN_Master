@@ -1,0 +1,50 @@
+.wrapperEmptyCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid #ECECEC;
+  border-radius: 7px;
+  font-family: SFProText-Bold;
+
+  .wrapperDay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    font-weight: bold;
+
+    .day {
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .numDay {
+      color: black;
+      font-size: 20px;
+    }
+  }
+
+  .button {
+    color: #A2A2A2;
+    margin-left: 10px;
+
+    span {
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.popoverWorkout {
+  div[class~='ant-popover-inner-content'] {
+    border-radius: 7px;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+}
+div[class~='ant-popover-inner-content'] {
+  border-radius: 7px;
+  padding: 0;
+  overflow: hidden;
+}

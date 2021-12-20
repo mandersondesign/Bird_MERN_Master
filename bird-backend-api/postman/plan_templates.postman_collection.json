@@ -1,0 +1,615 @@
+{
+	"info": {
+		"_postman_id": "b4355ff9-e3b6-48e5-bb6f-47afeb20d5c2",
+		"name": "plan_templates",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/plan_templates [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates?sort&sort_type",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": null,
+							"description": "STRING"
+						},
+						{
+							"key": "sort_type",
+							"value": null,
+							"description": "STRING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/athletes [AUTH][ATHLETE]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/athletes?limit=&page=&sort&sort_type",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"athletes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "page",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "sort",
+							"value": null,
+							"description": "STRING"
+						},
+						{
+							"key": "sort_type",
+							"value": null,
+							"description": "STRING"
+						}
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/sort [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phases\": [\r\n        {\r\n            \"plan_phase_template_id\": 0,\r\n            \"number_of_phase\": 0,\r\n            \"plan_week_templates\": [\r\n                {\r\n                    \"plan_week_template_id\": 0\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/sort",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"sort"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases/:phase_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases/:phase_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases",
+						":phase_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						},
+						{
+							"key": "phase_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases/:phase_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases/:phase_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases",
+						":phase_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						},
+						{
+							"key": "phase_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases",
+						":phase_id",
+						"weeks"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						},
+						{
+							"key": "phase_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases",
+						":phase_id",
+						"weeks",
+						":week_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						},
+						{
+							"key": "phase_id"
+						},
+						{
+							"key": "week_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases",
+						":phase_id",
+						"weeks",
+						":week_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						},
+						{
+							"key": "phase_id"
+						},
+						{
+							"key": "week_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id/workouts [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"\",\r\n    \"workout_type_id\": 0,\r\n    \"workout_type_name\": \"\",\r\n    \"distance\": 0,\r\n    \"time\": 0,\r\n    \"pace_id\": 0,\r\n    \"day_number\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id/workouts",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases",
+						":phase_id",
+						"weeks",
+						":week_id",
+						"workouts"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						},
+						{
+							"key": "phase_id"
+						},
+						{
+							"key": "week_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id/workouts/:workout_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id/workouts/:workout_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases",
+						":phase_id",
+						"weeks",
+						":week_id",
+						"workouts",
+						":workout_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						},
+						{
+							"key": "phase_id"
+						},
+						{
+							"key": "week_id"
+						},
+						{
+							"key": "workout_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id/workouts/:workout_id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workout_id\": 0,\r\n\t\"name\": \"\",\r\n\t\"description\": \"\",\r\n\t\"workout_type_id\": 0,\r\n\t\"workout_type_name\": \"\",\r\n\t\"distance\": 0,\r\n\t\"time\": \"\",\r\n\t\"pace_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plan_templates/:plan_template_id/phases/:phase_id/weeks/:week_id/workouts/:workout_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plan_templates",
+						":plan_template_id",
+						"phases",
+						":phase_id",
+						"weeks",
+						":week_id",
+						"workouts",
+						":workout_id"
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						},
+						{
+							"key": "phase_id"
+						},
+						{
+							"key": "week_id"
+						},
+						{
+							"key": "workout_id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

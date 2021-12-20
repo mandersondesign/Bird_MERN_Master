@@ -1,0 +1,42 @@
+version: '3.1'
+
+services:
+ db:
+   image: postgres:10.6
+   volumes:
+       - db_bird:/var/lib/postgresql/data
+   environment:
+     - POSTGRES_USER=bird
+     - POSTGRES_PASSWORD=bird2019
+   ports:
+       - 5432:5432
+
+ api:
+   command: ["sh", "-c", "npm i && rm -rf dist && TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true npm run build && NODE_ENV=production node dist/server.js"]
+   build:
+    context: .
+    dockerfile: docker/dev/Dockerfile
+   volumes:
+     - ./:/app  # only dev
+   ports:
+     - 3000:3000
+   restart: on-failure
+
+ cron:
+   command: ["sh", "-c", "rm -rf dist && TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true npm run build && NODE_ENV=production node dist/cronDaemon.js"]
+   build:
+     context: .
+     dockerfile: docker/dev/Dockerfile
+   volumes:
+     - ./:/app  # only dev
+
+ risk_cron:
+   command: ["sh", "-c", "rm -rf dist && TS_NODE_FILES=true TS_NODE_TRANSPILE_ONLY=true npm run build && NODE_ENV=production node dist/riskDaemon.js"]
+   build:
+     context: .
+     dockerfile: docker/dev/Dockerfile
+   volumes:
+     - ./:/app  # only dev
+
+volumes:
+  db_bird:

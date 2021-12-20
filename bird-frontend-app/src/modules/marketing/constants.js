@@ -1,0 +1,7 @@
+export const MARKETING_STATE = 'marketing'
+
+export const GET_PROGRAM = `${MARKETING_STATE}/GET_PROGRAM`
+export const SET_USER = `${MARKETING_STATE}/SET_USER`
+export const SET_PROGRAM = `${MARKETING_STATE}/SET_PROGRAM`
+export const LOGOUT = `${MARKETING_STATE}/LOGOUT`
+export const UPDATE_USER = `${MARKETING_STATE}/UPDATE_USER`

@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "cd1bffe6-5261-40d0-b48f-0b3bfb95fb37",
+		"name": "plans",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/plans/ [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/recommended [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/recommended?event_id=&past_experience_id=&miles_per_week_id=&long_distance_id=",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						"recommended"
+					],
+					"query": [
+						{
+							"key": "event_id",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "past_experience_id",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "miles_per_week_id",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "long_distance_id",
+							"value": "",
+							"description": "NUMBER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/:plan_template_id/athletes [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/:plan_template_id/athletes?limit=0&page=0&sort&sort_type",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						":plan_template_id",
+						"athletes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "sort",
+							"value": null
+						},
+						{
+							"key": "sort_type",
+							"value": null
+						}
+					],
+					"variable": [
+						{
+							"key": "plan_template_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/:plan_id/weeks [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/:plan_id/weeks",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						":plan_id",
+						"weeks"
+					],
+					"variable": [
+						{
+							"key": "plan_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/:plan_id/weeks/:week_id [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/:plan_id/weeks/:week_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						":plan_id",
+						"weeks",
+						":week_id"
+					],
+					"variable": [
+						{
+							"key": "plan_id"
+						},
+						{
+							"key": "week_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/:plan_id/weeks/:week_id/copy [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/:plan_id/weeks/:week_id/copy",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						":plan_id",
+						"weeks",
+						":week_id",
+						"copy"
+					],
+					"variable": [
+						{
+							"key": "plan_id"
+						},
+						{
+							"key": "week_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/:plan_id/sort [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phases\": [\r\n        {\r\n            \"phase_number\": 0,\r\n            \"weeks\": [\r\n                {\r\n                    \"week_id\": 0,\r\n                    \"number_of_week\": 0\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/:plan_id/sort",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						":plan_id",
+						"sort"
+					],
+					"variable": [
+						{
+							"key": "plan_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/:plan_id/places [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/:plan_id/places",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						":plan_id",
+						"places"
+					],
+					"variable": [
+						{
+							"key": "plan_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/:plan_id/places [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paces\": [\r\n        {\r\n            \"pace_id\": 0,\r\n            \"value\": \"\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/:plan_id/places",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						":plan_id",
+						"places"
+					],
+					"variable": [
+						{
+							"key": "plan_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/plans/:plan_id/endplan [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/plans/:plan_id/endplan",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"plans",
+						":plan_id",
+						"endplan"
+					],
+					"variable": [
+						{
+							"key": "plan_id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

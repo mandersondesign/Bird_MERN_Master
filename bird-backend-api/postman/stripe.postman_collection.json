@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "4139dbc2-1c0d-4c7d-a530-da646f641d6c",
+		"name": "stripe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/stripe/webhook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"\",\r\n    \"data\": {\r\n        \"object\": {\r\n            \"subscription\": 0,\r\n            \"period_end\": 0\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/stripe/webhook",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"stripe",
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/stripe/cards [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/stripe/cards",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"stripe",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

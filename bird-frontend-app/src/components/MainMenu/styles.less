@@ -1,0 +1,135 @@
+@import '../../styles/index';
+@import '../../styles/mixins';
+
+.menu {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: 80px;
+	padding: 0 @margin-base;
+	background-color: @white;
+	overflow: hidden;
+
+	&-content {
+		position: relative;
+		width: 100%;
+		height: 80px;
+		border-bottom: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding-top: 3px;
+
+		&-item {
+			position: relative;
+			height: 100%;
+			padding: 0 10px;
+			font-size: 16px;
+			color: @grey;
+			cursor: pointer;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			margin-bottom: 0;
+			list-style: none;
+
+			&-text {
+				margin-left: 5px;					
+			}
+			
+			svg {
+				position: relative;
+				top: 2px;
+			}
+
+			&:hover {
+				border-bottom: none;
+				color: @dark-blue;
+                text-decoration: underline;
+
+				svg {
+					fill: @dark-blue;
+					stroke: @dark-blue;
+				}
+			}
+			&:active, &:focus {
+				border-bottom: none;
+				text-decoration-color: transparent;
+			}
+			&:visited {
+				text-decoration: none;
+				text-decoration-color: transparent;
+				color: @frostbite;
+				&:hover {
+					color: @dark-blue;
+                    text-decoration: underline;
+				}
+			}
+
+			
+		}
+
+		&-sub-menu {
+			position: fixed;
+			background-color: @white;
+			padding: 16px 30px 16px 20px;
+			box-shadow: 0 3px 9px 0 fade(@black, 10%);
+			border: solid 1px fade(@ash, 13%);
+			z-index: 9999;
+
+			&-title {
+				position: relative;
+				display: inline-flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				&:hover {
+					color: @dark-grayish;
+				}
+			}
+
+			&-item {
+				position: relative;
+				height: 28px;
+				line-height: 28px;
+				font-family: Rubik, sans-serif;
+				font-size: 16px;
+				color: @grey;
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: @dark-grayish !important;
+					border-bottom: none;
+					text-decoration-color: transparent;
+				}
+
+				&:visited {
+					text-decoration: none;
+					color: @grey;
+					&:hover {
+						color: @dark-grayish;
+					}
+				}
+			}
+		}
+	}
+
+	&-link {
+		&-active {
+			font-family: Rubik, sans-serif;
+			font-size: 16px;
+
+			color: @dark-grayish !important;
+
+			svg {
+				path {
+					fill: @dark-grayish;
+					stroke: @dark-grayish;
+				}
+			}
+		}
+	}
+}

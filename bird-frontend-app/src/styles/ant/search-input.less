@@ -1,0 +1,39 @@
+//@import './mixin';
+
+@search-prefix: ~'@{ant-prefix}-input-search';
+
+.certain-category-search-dropdown {
+  //width: 300px;
+  //height: 284px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.@{search-prefix} {
+  &-icon {
+    color: @text-color-secondary;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      color: fade(@black, 80%);
+    }
+  }
+
+  &-enter-button {
+    input {
+      border-right: 0;
+    }
+
+    & + .@{ant-prefix}-input-group-addon,
+    input + .@{ant-prefix}-input-group-addon {
+      padding: 0;
+      border: 0;
+
+      .@{search-prefix}-button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}

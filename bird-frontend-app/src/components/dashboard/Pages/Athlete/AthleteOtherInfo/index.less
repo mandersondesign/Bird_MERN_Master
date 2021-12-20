@@ -1,0 +1,63 @@
+.container {
+  margin-top: 20px;
+  transition: all 500ms ease-in-out;
+
+  hr {
+    border: 1.2px solid #F1F1F1;
+    margin: 20px 0;
+    background-color: #F1F1F1;
+  }
+
+  .shortInputs, .longInputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .wrapperCard {
+      width: 47%;
+
+      .title {
+        color: #a0a0a0;
+        font-family: SFProText-Regular, sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+      .input {
+        margin-top: 5px;
+      }
+
+      .value {
+        line-height: 40px;
+        padding-left: 20px;
+        background-color: #F8F8F8;
+        border-radius: 8px;
+        color: #a0a0a0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .longInputs {
+    .wrapperCard {
+      width: 100%;
+    }
+  }
+
+  .wrapperPaces {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn {
+      width: 150px;
+    }
+  }
+}

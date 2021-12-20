@@ -1,0 +1,75 @@
+.form {
+  margin-top: 20px;
+
+  hr {
+    border: 1.2px solid #F1F1F1;
+    margin: 20px 0;
+  }
+
+  .shortInputs, .longInputs {
+    display: flex;
+    justify-content: space-between;
+
+    .wrapperCard, .longWrapperCard {
+      width: 47%;
+
+      span[class='helios-sorting-menu__label'], input[class='ant-calendar-picker-input ant-input'] {
+        color: #a0a0a0;
+        font-family: SFProText-Regular, sans-serif;
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      .title {
+        color: #a0a0a0;
+        font-family: SFProText-Regular, sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+    }
+
+    input[class='ant-input'],
+    input[class~='ant-calendar-picker-input'],
+    span[class='helios-sorting-menu__label'] {
+      color: black !important;
+      text-transform: initial;
+    }
+
+    .longWrapperCard {
+      flex: 1;
+
+      div[class~='helios-dropdown'] {
+        width: 100%;
+      }
+    }
+  }
+  .longInputs {
+    .wrapperCard {
+      width: 100%;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .button {
+      text-transform: uppercase;
+      padding: 0 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+div[class='helios-sorting-menu__overlay'] {
+  max-height: 250px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  div[class~='helios-sorting-menu__link'] {
+    padding: 0 15px !important;
+  }
+}

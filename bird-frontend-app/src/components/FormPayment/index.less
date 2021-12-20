@@ -1,0 +1,77 @@
+.wrapperFormPayment {
+  .items {
+    display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+      height: 170px;
+    .top {
+      margin-bottom: 30px;
+      width: 250px;
+    }
+  
+    .wrapperStripeElement {
+      width: 250px;
+      border-radius: 15px;
+      padding: 13px 16px;
+    }
+    .errorMessage {
+      color: red;
+      min-height: 50px;
+    }
+    input {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-top: -30px;
+
+    .wrapperStripeElement {
+      width: 100px;
+    }
+  }
+
+  .wrapperActions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .wrapperFormPayment {
+    .items {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+      height: 170px;
+    }
+  }
+}
+@media screen and (min-width: 800px) {
+  .wrapperFormPayment {
+    .items {
+      display: flex;
+      justify-content: space-evenly;
+    flex-direction: row;
+    height: 120px;
+    padding-top: 50px;
+    }
+    .wrapperStripeElement {
+      width: 220px;
+      border-radius: 15px;
+      padding: 13px 16px;
+    }
+    .errorMessage {
+      min-height: 40px;
+      width: 100px;
+    } 
+  }
+}

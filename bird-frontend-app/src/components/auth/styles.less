@@ -1,0 +1,254 @@
+@import '../../styles/index';
+@import '../../styles/mixins';
+
+input {
+  font-size: 14px !important;
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.containerFormRight {
+  width: 50%;
+}
+
+.containerFormLeft {
+  width: 50%;
+  height: 100vh;
+}
+
+.containerFormRightLogo {
+  text-align: center;
+  margin-top: 68px;
+  margin-bottom: 166px;
+}
+
+.emailSentContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.VerificationMessage {
+  opacity: 0.7;
+  font-family: Celias-Regular;
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: -0.25px;
+  color: #000000 !important;
+}
+.VerificationLink {
+  font-family: Celias-Regular;
+  font-size: 9px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.25px;
+  color: #000000;
+}
+
+.errorImage {
+  width: 40px;
+}
+
+.containerFormRight {
+  text-align: right;
+}
+.formMargin {
+  margin-top: 25px;
+  font-size: 14px !important;
+}
+.signFormMargin {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 14px !important;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 360px;
+  margin: auto auto 37px;
+}
+
+.textPassword {
+  font-size: 26px;
+  text-align: right;
+}
+.formBtn {
+  font-size: 16px !important;
+}
+
+.text {
+  opacity: 0.7;
+  font-family: Celias-Regular;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.25px;
+  text-align: center;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+}
+
+
+.forgotPassword {
+  text-decoration: underline;
+}
+
+
+.titleText {
+  font-family: Celias-Bold;
+  font-size: 40px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: -0.75px;
+  text-align: center;
+  color: #000000;
+  max-width: 360px;
+  margin: 0 auto 30px;
+}
+
+
+
+.subTitleText {
+  font-family: Celias-Regular;
+  max-width: 360px;
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  color: #000000;
+  margin: auto auto 26px;
+  text-align: center;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+.marginBottom40 {
+  margin-bottom: 40px;
+}
+
+.title {
+  color: fade(@dark-grayish, 50%);
+  font-size: 12px;
+}
+
+.spinnerStyle {
+  opacity: 0.7;
+  color: #000000;
+}
+
+.button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 54px;
+  border-radius: 16px;
+  background-color: @custom-yellow;
+  font-family: Celias-Bold;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.17px;
+  text-align: center;
+  color: #000000;
+  border: unset;
+}
+
+.submitButton {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  .arrowIcon {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+.button:hover, .button:active, .button:focus {
+  border: unset;
+  background-color: #eaeaea !important;
+  color: #000000;
+}
+
+.rightImage {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+div[class='ant-row ant-form-item ant-form-item-with-help'] {
+  margin: 0;
+  min-height: 68px;
+}
+
+div[class='ant-row ant-form-item'] {
+  margin: 0;
+  height: 68px;
+}
+
+.containerBadges{
+  display: flex;
+  justify-content: center;
+  .wrapperBadge {
+  height: 5vh;
+  margin: 10px;
+    .logoBadge{
+      height: 100%;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.containerSignUp {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.signUp {
+  margin-left: 10px;
+}
+
+.forgotPassword {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .containerFormRight {
+    display: none;
+  }
+  .containerFormLeft {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .containerFormRightLogo {
+    margin-bottom: 80px;
+  }
+}

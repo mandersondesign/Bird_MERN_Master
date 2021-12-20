@@ -1,0 +1,36 @@
+//COLORS
+$white: #fff;
+$black: #000;
+
+$red-lightest: #ffe8e4;
+$red-light: #ffc5bb;
+$red: #fa5252;
+$red-dark: #b63c3c;
+$red-darkest: #722626;
+
+$yellow-lightest: #ffff89;
+$yellow-light: #ffff55;
+$yellow: #f5e106;
+$yellow-dark: #beb000;
+$yellow-darkest: #beb000;
+$grey-button: #eaeaea;
+$grey-lightest: #f5f5f5;
+$grey-light: #e2e2e2;
+$grey: #b8b8b8;
+$grey-dark: #868686;
+$grey-darkest: #484848;
+
+
+$shadowBlur: 24px;
+$card-shadow: 0 8px $shadowBlur 0 rgba(0, 0, 0, 0.08);
+$card-shadow-hover: 0 8px $shadowBlur 0 rgba(0, 0, 0, 0.16);
+$card-shadow-hover-visited: 0 8px $shadowBlur 0 rgba(0, 0, 0, 0.04);
+
+//DIMENSIONS
+$margin-base: 30px;
+$margin-mobile: #{ $margin-base / 3 };
+
+//DEFAULT-COLOR NavLink
+$color-nav-link: #3B00FF;
+$hover-color-nav-link: #5C2CF8;
+

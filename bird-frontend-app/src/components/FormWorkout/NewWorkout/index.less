@@ -1,0 +1,159 @@
+.wrapperNewWorkout {
+
+  .wrapperInputLibraryName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .addBtn {
+      margin: 0 0 10px 10px;
+    }
+  }
+
+  .title {
+    text-transform: uppercase;
+    color: #A2A2A2;
+    font-size: 9px;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+
+  .input {
+    background-color: #F2F2EE;
+    width: 250px;
+  }
+
+  .wrapperNewWorkoutBody {
+    display: flex;
+
+
+    .block {
+      width: 250px;
+      margin-right: 20px;
+
+      .wrapperType {
+        display: flex;
+        flex-direction: column;
+
+        div[class~='ant-select'] {
+          width: 250px;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+      .hideDescription {
+        display: none;
+      }
+    }
+    span[class='ant-time-picker'] {
+      width: 100%;
+    }
+    input[class='ant-time-picker-input'] {
+      background-color: #efeee9;
+      transition: all 0.5s ease-in-out;
+    }
+    .radioGroup {
+      height: 13px;
+      line-height: 9px;
+      margin-bottom: 2px;
+      label {
+        margin-right: 10px;
+        span[class~='ant-radio'] {
+          display: none !important;
+        }
+      }
+      label[class~='ant-radio-wrapper']:first-child span:after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        right: -1px;
+        width: 1px;
+        height: 9px;
+        background: #000000;
+      }
+      label[class~='ant-radio-wrapper'] span[class~='ant-radio'] {
+        display: none !important;
+      }
+      label[class~='ant-radio-wrapper'] span {
+        display: block;
+        position: relative;
+        text-transform: uppercase;
+        color: #A2A2A2;
+        font-size: 9px;
+        font-weight: bold;
+        padding-left: 0;
+      }
+      label[class~='ant-radio-wrapper-checked'] span {
+        text-decoration: underline;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .clearBtn {
+      margin-right: 20px;
+      text-decoration: underline;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .addBtn {
+      background-color: #F5EB00;
+      color: black;
+      border: none;
+    }
+    .titleBtn {
+      margin-right: 370px;
+    }
+    .titleLibrarySave {
+      margin-right: 420px;
+    }
+    .titleLibraryAddNew {
+      margin-right: 450px;
+    }
+  }
+
+  .blockLast {
+    margin: 0 !important;
+  }
+}
+
+div[class~='ant-select-dropdown'] {
+  min-height: 180px;
+  background-color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.titleInput {
+  background-color: #F2F2EE;
+  width: 250px !important;
+}
+.descriptionLink {
+  height: 115px;
+  overflow-wrap: break-word;
+  min-height: 115px;
+  max-height: 115px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #F2F2EE;
+  width: 250px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  line-height: 1.5;
+  opacity: 0.7;
+  border-radius: 10px;
+  a, a:visited {
+    color: #1890ff;
+  }
+}
+.descriptionLink:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+

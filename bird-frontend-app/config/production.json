@@ -1,0 +1,8 @@
+{
+  "url": "https://api.bird.coach/v1/",
+  "url2": "https://api.bird.coach/v2/",
+  "socketUrl": "https://api.bird.coach/",
+  "stripeKey": "pk_live_nREd4A55MowgKXHKjXajEGQ700cIWwIL1g",
+  "urlMarketing": "https://bird.coach/",
+  "showSignUp": true
+}

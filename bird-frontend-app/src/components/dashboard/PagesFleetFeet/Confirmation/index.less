@@ -1,0 +1,108 @@
+.logo {
+  width: 50vw;
+}
+
+.wrapperConfirmation {
+  background-color: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.confirmationBlock {
+  width: 60vw;
+  background-color: #ffffff;
+  box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.messageTitle {
+  text-align: center;
+  margin-top: 40px;
+  font-family: Gotham-Bold;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  color: #000000;
+}
+
+.messageDescription {
+  width: 50vw;
+  text-align: center;
+  margin: 20px 0;
+  font-family: Gotham-Light;
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: #000000;
+}
+
+.stores {
+  margin-bottom: 20px;
+  .link {
+    margin: 10px;
+  }
+}
+
+.shops {
+  width: 60px;
+}
+
+.birdLogo {
+  width: 20px;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 400px) {
+  .confirmationBlock {
+    height: 60vh;
+  }
+
+  .messageTitle {
+    font-size: 25px;
+  }
+
+  .messageDescription {
+    font-size: 15px;
+  }
+
+  .stores {
+    margin-bottom: 20px;
+    .link {
+      margin: 10px
+    }
+  }
+
+  .shops {
+    width: 80px;
+  }
+
+  .birdLogo {
+    width: 30px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .confirmationBlock {
+    height: 80vh;
+  }
+
+  .birdLogo {
+    width: 30px;
+  }
+  
+  .shops {
+    width: 100px;
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../styles/bem.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+#{ bem-block(UserInfo) } {
+  @include flex(row, center);
+}
+
+#{ bem-element(UserInfo, name) } {
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+#{ bem-element(UserInfo, label) } {
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: #3C6F38;
+  border: 1px solid #3C6F38;
+  text-align: center;
+  padding: 2px;
+  vertical-align: middle;
+}
+
+#{ bem-element(UserInfo, eventName) } {
+  color: #ABABAB;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: SFProDisplay-Bold;
+} 
+
+#{ bem-element(UserInfo, wrapper) } {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}

@@ -1,0 +1,57 @@
+.form {
+  margin-top: 20px;
+
+  hr {
+    border: 1.2px solid #F1F1F1;
+  }
+
+  .shortInputs, .longInputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .wrapperCard, .cardRecords {
+      width: 47%;
+
+      .input {
+        margin-top: 5px;
+      }
+
+      .title {
+        color: #a0a0a0;
+        font-family: SFProText-Regular, sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+
+      .value {
+        font-family: SFProText-Regular, sans-serif;
+        color: #a0a0a0;
+        background-color: #F8F8F8;
+        border-radius: 8px;
+        word-wrap: break-word;
+        padding: 16px 16px 16px 20px;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.36;
+        letter-spacing: -0.2px;
+      }
+    }
+
+    .cardRecords {
+      .value {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .longInputs {
+    .wrapperCard {
+      width: 100%;
+    }
+  }
+}

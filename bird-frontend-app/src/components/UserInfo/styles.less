@@ -1,0 +1,89 @@
+@import '../../styles/index';
+
+.root {
+  padding: 20px 0;
+}
+
+.gallery-container {
+  overflow: auto;
+}
+
+.gallery {
+  height: 160px;
+  white-space: nowrap;
+
+  .gallery-item {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 30px;
+    cursor: pointer;
+    height: 160px;
+
+    &.active {
+      margin-right: 40px;
+    }
+  }
+
+  img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: 0.4s;
+    transition-delay: 0.3s;
+    position: relative;
+    top: 40px;
+  }
+
+  img:hover {
+    opacity: 1;
+    transition: 0.4s;
+  }
+
+  .active img {
+    height: 160px;
+    width: 160px;
+    opacity: 1;
+    filter: none;
+    transition: 0.4s;
+    top: 0;
+  }
+}
+
+.info-container {
+  animation-name: appear;
+  animation-duration: 1s;
+
+  .name {
+    display: inline-block;
+    color: @green;
+    border-bottom: dotted 1px @green;
+    margin-bottom: 14px;
+    padding-top: 40px;
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 16px;
+    color: @light-grey;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  .main {
+    font-size: 19px;
+    line-height: 1.47;
+    margin: 0;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

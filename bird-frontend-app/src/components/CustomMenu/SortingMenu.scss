@@ -1,0 +1,97 @@
+@import '../../styles/bem';
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+#{ bem-block(SortingMenu) } {
+  display: inline-block;
+  cursor: pointer;
+}
+
+#{ bem-element(SortingMenu, content) } {
+  @include flex(row, center, null, space-between);
+
+  height: 40px;
+  background: #333333;
+  border-radius: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-width: 160px;
+}
+
+#{ bem-element(SortingMenu, label) } {
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 84.84%;
+  letter-spacing: 0.015em;
+  color: #f2f2f2;
+}
+
+#{ bem-element(SortingMenu, arrow) } {
+  @include transition(transform, 0.1s, ease-in);
+  transform: rotate(180deg);
+  margin-left: 16px;
+  width: 12px;
+  height: 12px;
+  fill: #a0a0a0;
+}
+
+#{ bem-element(SortingMenu, linkText) } {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+#{ bem-element(SortingMenu, arrow, rotate) } {
+  transform: rotate(360deg);
+}
+
+#{ bem-element(SortingMenu, overlay) } {
+  background-color: $white;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+  padding-right: 8px;
+  padding-left: 8px;
+  border-radius: 12px;
+}
+
+#{ bem-element(SortingMenu, link) } {
+  @include transition(background, 0.1s, ease-in);
+  cursor: pointer;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  color: #333333;
+  font-stretch: normal;
+  background: transparent;
+  line-height: 42px;
+  &:hover,
+  &:focus,
+  &:visited,
+  &:visited:hover {
+    color: $black;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:visited:hover {
+    background: $yellow;
+
+    #{ bem-element(SortingMenu, linkIcon) } {
+      fill: $yellow;
+      color: $black;
+    }
+  }
+}
+
+#{ bem-element(SortingMenu, linkIcon) } {
+  @include transition(fill color, 0.1s, ease-in);
+  margin: 0 5px 0 5px;
+  fill: $grey;
+  color: $grey-dark;
+  width: 24px;
+  height: 24px;
+}

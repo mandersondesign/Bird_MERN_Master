@@ -1,0 +1,55 @@
+@import "../../styles/bem.scss";
+@import "../../styles/mixins.scss";
+@import "../CustomButton/Button.scss";
+@import "../CustomIcon/Icon-mixins.scss";
+
+$link-default-color: #000 !default;
+$link-default-color-focus: #000 !default;
+
+#{ bem-block(Link) }, #{ bem-block(Link) }:visited {
+  @include transition(color, .1s, ease-in);
+}
+
+#{ bem-block(Link, null, bem-block(Button)) } {
+  justify-content: space-around;
+}
+
+#{ bem-block(Link, null, bem-block(Button)) },
+#{ bem-block(Link, null, bem-block(Button)) }:visited {
+  text-decoration: none;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+#{ bem-block(Link, default) },
+#{ bem-block(Link, default) }:visited {
+  color: $link-default-color;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: $link-default-color-focus;
+    text-decoration: none;
+  }
+}
+
+#{ bem-block(Link, default active) } {
+  font-weight: bold;
+}
+
+#{ bem-element(Link, icon) } {
+  margin-right: 6px;
+
+  @include helios-icon-colors(default);
+
+  @at-root
+  #{ bem-block(Link, default) }:hover &,
+  #{ bem-block(Link, default) }:focus & {
+    @include helios-icon-colors(active);
+  }
+}
+
+#{ bem-element(Link, icon, active) } {
+  @include helios-icon-colors(active);
+}

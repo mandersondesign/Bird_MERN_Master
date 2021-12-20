@@ -1,0 +1,55 @@
+@import '../../styles/index';
+
+.container {
+	h1,
+	p {
+		text-align: center;
+	}
+}
+
+.iconsGrid {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+
+	.icons {
+		display: flex;
+		flex-flow: column nowrap;
+		margin: 25px 15px;
+		align-items: center;
+		min-width: 165px;
+
+		p {
+			font-size: 15px;
+			margin-top: 10px;
+		}
+	}
+}
+
+.iconSizesExample {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: center;
+	flex-wrap: wrap;
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+
+	div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 15px;
+	}
+}
+
+.wrapperIcon {
+  display: flex;
+  align-self: center;
+}
+
+.wrapperDashboardIcon {
+  display: flex;
+  align-self: center;
+  margin-top: 10px;
+}

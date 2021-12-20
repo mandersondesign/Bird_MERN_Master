@@ -1,0 +1,15 @@
+@import "~normalize.css/normalize.css";
+
+html, body {
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+body {
+  position: relative;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  height: 100%;
+}

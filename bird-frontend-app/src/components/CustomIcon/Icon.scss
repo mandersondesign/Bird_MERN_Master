@@ -1,0 +1,61 @@
+@import "../../styles/bem.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+@import "../Sized/Sized.scss";
+@import "./Icon-mixins.scss";
+@import "./Icon-variables.scss";
+
+#{ bem-block(Icon) } {
+  @include transition(border-radius background-color padding, .1s, ease-in);
+  display: inline-block;
+  position: relative;
+  width: $icon-size-medium;
+  height: $icon-size-medium;
+}
+
+#{ bem-block(Icon, bordered) } {
+  background-color: #e2e2e2;
+  border-radius: 4px;
+}
+
+@each $face in map-keys($icon-colors) {
+  #{ bem-block(Icon, $face bordered light) } {
+    background-color: map-get(map-get($icon-colors, $face), primary);
+  }
+}
+
+#{ bem-block(Icon, bordered rounded) } {
+  border-radius: 50%;
+}
+
+@each $size, $size-value in $icon-sizes {
+  #{ bem-block(Icon, null, bem-block(Sized, $size)) } {
+    width: $size-value;
+    height: $size-value;
+  }
+}
+
+#{ bem-element(Icon, sprite) } {
+  @include position(absolute, 50%, 50%, $width: 100%);
+  @include transition(color fill padding, .1s, ease-in);
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+#{ bem-element(Icon, sprite, bordered) } {
+  padding: 2px;
+}
+
+#{ bem-element(Icon, sprite, rounded, bem-block(Sprite, group)) } {
+  transform: translate(calc(-50% - 1px), -50%);
+}
+
+@each $face in map-keys($icon-colors) {
+  #{ bem-block(Icon, $face) } {
+    @include helios-icon-colors($face);
+  }
+
+  #{ bem-block(Icon, $face light) } {
+    @include helios-icon-colors($face, true);
+  }
+}

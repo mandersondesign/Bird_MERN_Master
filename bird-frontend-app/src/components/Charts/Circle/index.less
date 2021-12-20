@@ -1,0 +1,61 @@
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.absoluteCenter {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  &:extend(.flexCenter);
+}
+
+.wrapperSvg {
+  height: 170px;
+  width: 200px;
+  position: relative;
+
+  .wrapperTexts {
+    &:extend(.flexCenter);
+    flex-direction: column;
+
+    .flex {
+      &:extend(.absoluteCenter);
+      flex-direction: row;
+    }
+  }
+
+  .textCompleted {
+    margin-left: 20px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .textAssigned {
+    color: #C3C3C3;
+  }
+
+  .textCompleted,
+  .textAssigned {
+    font-size: 20px;
+  }
+  .textCompleted {
+    margin-right: 2px;
+  }
+
+  .title {
+    font-size: 10.5px;
+    font-family: SFProText-Bold;
+    line-height: 10.5;
+    letter-spacing: 0.63px;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    &:extend(.absoluteCenter);
+    top: 40px;
+    left: 20px;
+  }
+}

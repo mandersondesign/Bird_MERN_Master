@@ -1,0 +1,9 @@
+export const CHAT_STATE = 'chat'
+
+export const SET_ATHLETE = `${CHAT_STATE}/SET_ATHLETE`
+export const TOGGLE_CHAT = `${CHAT_STATE}/OPEN_CHAT`
+export const SET_MESSAGES = `${CHAT_STATE}/SET_MESSAGES`
+export const ADD_NEW_MESSAGE = `${CHAT_STATE}/ADD_NEW_MESSAGE`
+export const UPDATE_MESSAGE = `${CHAT_STATE}/UPDATE_MESSAGE`
+export const CLEAR_CHAT = `${CHAT_STATE}/CLEAR_CHAT`
+export const LIKE_WORKOUT = `${CHAT_STATE}/LIKE_WORKOUT`

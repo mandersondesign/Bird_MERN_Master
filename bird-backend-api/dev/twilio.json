@@ -1,0 +1,277 @@
+{
+    "description": "Daily chatbot (Jun 2020)",
+    "states": [
+        {
+            "name": "Trigger",
+            "type": "trigger",
+            "transitions": [
+                {
+                    "event": "incomingMessage"
+                },
+                {
+                    "event": "incomingCall"
+                },
+                {
+                    "next": "did_you_run_question",
+                    "event": "incomingRequest"
+                }
+            ],
+            "properties": {
+                "offset": {
+                    "x": -10,
+                    "y": -40
+                }
+            }
+        },
+        {
+            "name": "did_you_run_question",
+            "type": "send-and-wait-for-reply",
+            "transitions": [
+                {
+                    "next": "respond_to_run_question",
+                    "event": "incomingMessage"
+                },
+                {
+                    "event": "timeout"
+                },
+                {
+                    "event": "deliveryFailure"
+                }
+            ],
+            "properties": {
+                "offset": {
+                    "x": 200,
+                    "y": 290
+                },
+                "service": "{{trigger.message.InstanceSid}}",
+                "channel": "{{trigger.message.ChannelSid}}",
+                "from": "{{flow.channel.address}}",
+                "body": "Hi  {{flow.data.first_name}}, did you do your workout as written in your plan today?",
+                "timeout": 3600
+            }
+        },
+        {
+            "name": "respond_to_run_question",
+            "type": "split-based-on",
+            "transitions": [
+                {
+                    "next": "did_you_run_question",
+                    "event": "noMatch"
+                },
+                {
+                    "next": "coach_notes",
+                    "event": "match",
+                    "conditions": [
+                        {
+                            "friendly_name": "If value starts_with y",
+                            "arguments": [
+                                "{{widgets.did_you_run_question.inbound.Body}}"
+                            ],
+                            "type": "starts_with",
+                            "value": "Y"
+                        }
+                    ]
+                },
+                {
+                    "next": "completed_by_plan",
+                    "event": "match",
+                    "conditions": [
+                        {
+                            "friendly_name": "If value starts_with N",
+                            "arguments": [
+                                "{{widgets.did_you_run_question.inbound.Body}}"
+                            ],
+                            "type": "starts_with",
+                            "value": "N"
+                        }
+                    ]
+                }
+            ],
+            "properties": {
+                "input": "{{widgets.did_you_run_question.inbound.Body}}",
+                "offset": {
+                    "x": 550,
+                    "y": 580
+                }
+            }
+        },
+        {
+            "name": "completed_by_plan",
+            "type": "send-and-wait-for-reply",
+            "transitions": [
+                {
+                    "next": "respond_to_completed_by_plan",
+                    "event": "incomingMessage"
+                },
+                {
+                    "event": "timeout"
+                },
+                {
+                    "event": "deliveryFailure"
+                }
+            ],
+            "properties": {
+                "offset": {
+                    "x": 830,
+                    "y": 990
+                },
+                "service": "{{trigger.message.InstanceSid}}",
+                "channel": "{{trigger.message.ChannelSid}}",
+                "from": "{{flow.channel.address}}",
+                "body": "No problem, did you do the workout partially?",
+                "timeout": 3600
+            }
+        },
+        {
+            "name": "http_1",
+            "type": "make-http-request",
+            "transitions": [
+                {
+                    "event": "success"
+                },
+                {
+                    "event": "failed"
+                }
+            ],
+            "properties": {
+                "offset": {
+                    "x": 830,
+                    "y": 2020
+                },
+                "method": "POST",
+                "content_type": "application/x-www-form-urlencoded;charset=utf-8",
+                "parameters": [
+                    {
+                        "value": "{{widgets.did_you_run_question.inbound.Body}}",
+                        "key": "did_you_run"
+                    },
+                    {
+                        "value": "{{widgets.completed_by_plan.inbound.Body}}",
+                        "key": "to_plan"
+                    },
+                    {
+                        "value": "{{widgets.coach_notes.inbound.Body}}",
+                        "key": "notes"
+                    },
+                    {
+                        "value": "{{flow.data.athlete_id}}",
+                        "key": "athlete_id"
+                    },
+                    {
+                        "value": "{{flow.data.workout_id}}",
+                        "key": "workout_id"
+                    },
+                    {
+                        "value": "{{flow.sid}}",
+                        "key": "sid"
+                    },
+                    {
+                        "value": "{{flow.data.plan_id}}",
+                        "key": "plan_id"
+                    }
+                ],
+                "url": "https://{{flow.data.response_server}}"
+            }
+        },
+        {
+            "name": "coach_notes",
+            "type": "send-and-wait-for-reply",
+            "transitions": [
+                {
+                    "next": "http_1",
+                    "event": "incomingMessage"
+                },
+                {
+                    "next": "http_1",
+                    "event": "timeout"
+                },
+                {
+                    "event": "deliveryFailure"
+                }
+            ],
+            "properties": {
+                "offset": {
+                    "x": 440,
+                    "y": 1690
+                },
+                "service": "{{trigger.message.InstanceSid}}",
+                "channel": "{{trigger.message.ChannelSid}}",
+                "from": "{{flow.channel.address}}",
+                "body": "Great! Would you like to tell your coach anything about today?",
+                "timeout": 3600
+            }
+        },
+        {
+            "name": "send_message_1",
+            "type": "send-message",
+            "transitions": [
+                {
+                    "next": "http_1",
+                    "event": "sent"
+                },
+                {
+                    "event": "failed"
+                }
+            ],
+            "properties": {
+                "offset": {
+                    "x": 1110,
+                    "y": 1660
+                },
+                "service": "{{trigger.message.InstanceSid}}",
+                "channel": "{{trigger.message.ChannelSid}}",
+                "from": "{{flow.channel.address}}",
+                "to": "{{contact.channel.address}}",
+                "body": "Got it, thanks! Have a good night."
+            }
+        },
+        {
+            "name": "respond_to_completed_by_plan",
+            "type": "split-based-on",
+            "transitions": [
+                {
+                    "event": "noMatch"
+                },
+                {
+                    "next": "coach_notes",
+                    "event": "match",
+                    "conditions": [
+                        {
+                            "friendly_name": "If value starts_with y",
+                            "arguments": [
+                                "{{widgets.completed_by_plan.outbound.Body}}"
+                            ],
+                            "type": "starts_with",
+                            "value": "Y"
+                        }
+                    ]
+                },
+                {
+                    "next": "send_message_1",
+                    "event": "match",
+                    "conditions": [
+                        {
+                            "friendly_name": "If value starts_with N",
+                            "arguments": [
+                                "{{widgets.completed_by_plan.outbound.Body}}"
+                            ],
+                            "type": "starts_with",
+                            "value": "N"
+                        }
+                    ]
+                }
+            ],
+            "properties": {
+                "input": "{{widgets.completed_by_plan.outbound.Body}}",
+                "offset": {
+                    "x": 830,
+                    "y": 1270
+                }
+            }
+        }
+    ],
+    "initial_state": "Trigger",
+    "flags": {
+        "allow_concurrent_calls": true
+    }
+}

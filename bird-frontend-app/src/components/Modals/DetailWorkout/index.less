@@ -1,0 +1,159 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* ----------------------------------------- */
+
+.detailWorkout {
+  button[class='ant-modal-close'] {
+    display: none;
+  }
+
+  .boxTitle {
+    font-size: 15px;
+    color: black;
+    line-height: 15px;
+    letter-spacing: -0.4px;
+    font-family: SFProText-Bold;
+  }
+
+  .box {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 16px;
+    flex: 1;
+
+    .row {
+      &:extend(.flex);
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  .section {
+    margin-bottom: 16px;
+
+    .title {
+      font-family: SFProText-Bold;
+      font-size: 10px;
+      letter-spacing: 0.6px;
+      line-height: 10px;
+      color: #a0a0a0;
+      text-transform: uppercase;
+    }
+
+    .value {
+      font-family: SFProDisplay-Black;
+      font-size: 20px;
+      color: #000000;
+      letter-spacing: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  header {
+    &:extend(.flex);
+
+    div {
+      width: auto;
+    }
+  }
+
+  .boxs {
+    &:extend(.flex);
+    align-items: center;
+    margin-top: 16px;
+
+    .box {
+      height: 186px;
+
+      &:first-child {
+        margin-right: 17px;
+
+        .row {
+          justify-content: flex-start;
+        }
+      }
+
+      div[class='Circle__wrapperSvg--3PepD'] {
+        margin-top: -40px;
+
+        div[class='Circle__flex--2B9Gp'] {
+          top: -20px;
+        }
+
+        div[class='Circle__title--36Cbi'] {
+          margin-top: -10px;
+        }
+      }
+
+      .column {
+        width: 50%;
+        &:last-child {
+          margin-left: 50px;
+        }
+      }
+    }
+  }
+
+  .body {
+    margin: 25px 0 16px;
+    &:extend(.flex);
+    align-items: flex-start;
+
+    .left {
+      flex: 1;
+      overflow: hidden;
+
+      .valueNotes, .valueNotesNone {
+        text-align: left;
+        font-family: SFProText-Regular;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: -0.2px;
+        color: black;
+      }
+
+      .valueNotesNone {
+        color: #B5B5B5;
+        font-style: italic;
+      }
+    }
+
+    .right {
+      flex: 1;
+      margin-left: 20px;
+    }
+  }
+
+  .freeFooter {
+    height: 250px;
+
+    svg[class='recharts-surface'] {
+      padding: 5px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    div[class='recharts-responsive-container'] {
+      margin-top: -30px;
+    }
+
+    .box {
+      height: 100%;
+    }
+
+    .line {
+      height: 1px;
+      width: 100%;
+      background-color: #d9d9d9;
+      margin-top: 50px;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.wrapperEditUser {
+  .rootHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 30px;
+    
+    .rootTitle {
+      font-family: Celias-Bold;
+      font-size: 32px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.69;
+      letter-spacing: -1.2px;
+      color: #000000;
+    }
+  }
+
+  .body {
+    display: flex;
+    justify-content: center;
+
+    .form {
+      max-width: 360px;
+      width: 100%;
+      margin-top: 60px;
+
+      .formInput {
+        
+        height: 40px;
+        margin-bottom: 38px;
+      }
+
+      .doubleItems {
+        display: flex;
+        justify-content: space-between;
+
+        > * {
+          width: 47%;
+        }
+      }
+    }
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .button {
+      padding: 13px 18px;
+      border-radius: 15px;
+      width: 45%;
+      text-transform: uppercase;
+      color: black;
+      font-weight: bold;
+      height: 100%;
+      text-align: center;
+      &:hover {
+        text-decoration: none;
+        border: unset;
+      background-color: #eaeaea;
+      color: #000000;
+      }
+    }
+
+    .cancelButton {
+      background-color: #f4f3ef;
+    }
+
+    .submitButton {
+      background-color: #F5EA00;
+    }
+  }
+}

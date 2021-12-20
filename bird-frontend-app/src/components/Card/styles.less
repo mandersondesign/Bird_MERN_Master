@@ -1,0 +1,72 @@
+@import '../../styles/index';
+@import '../../styles/mixins';
+
+.card {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+
+	.responsive-max(500px, {
+		flex-direction: column;
+	});
+
+	&-wrapper {
+		border-radius: 5px;
+		position: relative;
+		overflow: hidden;
+		background-color: @white;
+		box-shadow: @card-shadow;
+		border: solid 1px @white-light;
+		box-sizing: border-box;
+		height: @card-height;
+		display: flex;
+		flex-direction: column;
+		transition: box-shadow 0.2s ease-in-out;
+		&:hover, &:focus, &:active {
+			text-decoration: none;
+			box-shadow: @card-shadow-hover;
+		}
+	}
+	&-visited {
+		background: transparent;
+		box-shadow: none;
+		&:hover, &:focus, &:active {
+			text-decoration: none;
+			box-shadow: @card-shadow-hover-visited;
+		}
+	}
+	&-content {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		position: relative;
+		overflow: hidden;
+		justify-content: space-between;
+		width: 100%;
+	}
+}
+
+.horizontal {
+	&-full {
+		justify-content: flex-end;
+	}
+}
+
+.horizontalBiggest {
+	height: 590px;
+	.responsive-max(@screen-sm-max, {
+		height: 100%;
+	});
+}
+
+.vertical {
+	> div {
+		&:nth-child(2),
+		&:nth-child(3) {
+			margin-left: 157px;
+			.responsive-max(@screen-md-max, {
+				margin-left: 81px;
+			});
+		}
+	}
+}

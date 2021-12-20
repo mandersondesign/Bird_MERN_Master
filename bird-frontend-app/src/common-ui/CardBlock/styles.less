@@ -1,0 +1,85 @@
+@import '../../styles/index';
+
+.forBlock(){
+	border-radius: 5px;
+	min-height: 40px;
+	height: auto;
+	color: @black;
+	padding: 0 16px 0;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	span {
+		font-size: 16px;
+	}
+}
+
+.block {
+	&-information{
+		margin: 13px 0;
+		&.horizontal-biggest{
+			margin-top: 20px;
+		}
+	}
+	&-value {
+		.forBlock();
+		background: @cultured;
+		padding: 4px 16px 5px 17px;
+		display: inline-block;
+		border: 0;
+		&-free {
+			composes: block-value;
+			font-weight: 500;
+			color: @green;
+		}
+		&-done{
+			.forBlock();
+			font-family: Rubik;
+			border: solid 1px rgba(151, 151, 151, 0.2);
+			background-color: transparent;
+		}
+	}
+}
+
+.horizontal {
+	&-biggest {
+		.block-value {
+			padding: 11px 21px 6px 20px;
+			span {
+				font-size: 22px;
+				font-family: LetoSans;
+			}
+		}
+	}
+}
+.big {
+	.block-value {
+		span {
+			font-size: 22px;
+		}
+	}
+}
+
+.remains-qty {
+	margin-left: 13px;
+	size: 13px;
+	color: @light-grey;
+	text-align: left;
+}
+
+.icon {
+	&-done {
+		margin-right: 2px;
+		margin-left: -7px;
+		path{
+			fill: @green;
+		}
+	}
+	&-progress{
+		margin-left: 6px;
+		path {
+			fill: none;
+			stroke: @green;
+		}
+	}
+}

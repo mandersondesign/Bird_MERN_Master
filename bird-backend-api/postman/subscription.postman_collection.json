@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "170bcc54-bfaa-409c-820a-1f8b71b13439",
+		"name": "subscription",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/subscriptions/coach [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"coach_plan_id\": 0,\r\n    \"token\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/subscriptions/coach",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions",
+						"coach"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/subscriptions/coach",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/subscriptions/coach?show_all",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions",
+						"coach"
+					],
+					"query": [
+						{
+							"key": "show_all",
+							"value": null,
+							"description": "BOOLEAN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/subscriptions/athlete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"athlete_plan_id\": 0,\r\n    \"email\": \"\",\r\n    \"token\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/subscriptions/athlete",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions",
+						"athlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/subscriptions/athletes/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/subscriptions/athlete/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions",
+						"athlete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,59 @@
+@import "../../styles/bem.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+
+#{ bem-block(TestPage) } {}
+
+#{ bem-element(TestPage, userMenu) } {
+  @include flex(row, center, $justify-content: center);
+}
+
+#{ bem-element(TestPage, row) } {
+  @include flex(row, center, $justify-content: center);
+}
+
+#{ bem-element(TestPage, row, workout) } {
+  @include flex(row, left, $justify-content: flex-start);
+}
+
+#{ bem-element(TestPage, rowLink) } {
+  text-transform: uppercase;
+}
+
+#{ bem-element(TestPage, rowLink, edit) } {
+  margin-right: 25px;
+}
+
+#{ bem-element(TestPage, icon) } {
+  width: 14px;
+  height: 14px;
+}
+
+#{ bem-element(TestPage, actions) } {
+  @include flex(row, center, $justify-content: space-between);
+}
+
+#{ bem-element(TestPage, activity) } {
+  font-family: SFProText-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+#{ bem-element(TestPage, timeToRace) } {
+  font-family: SFProDisplay-Bold;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+#{ bem-element(TestPage, search) } {
+  margin-left: 20px;
+}
+
+#{ bem-element(TestPage, add) } {
+  margin-left: 20px;
+}

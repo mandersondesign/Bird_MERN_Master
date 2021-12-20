@@ -1,0 +1,7 @@
+> 1%
+last 4 versions
+Firefox ESR
+
+# React doesn't support IE8
+# Redux doesn't support IE10
+not ie < 11

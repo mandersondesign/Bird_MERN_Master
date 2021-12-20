@@ -1,0 +1,470 @@
+{
+	"info": {
+		"_postman_id": "3a26cb17-5764-42a3-8ca3-b17e8e364ea7",
+		"name": "workouts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/workouts [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plan_id\": 0,\r\n    \"name\": \"\",\r\n    \"description\": \"\",\r\n    \"distance\": 0,\r\n    \"time\": \"\",\r\n    \"workout_type_id\": 0,\r\n    \"workout_type_name\": \"\",\r\n    \"pace_id\": 0,\r\n    \"date\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/types [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/types",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						"types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/ [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/ [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"\",\r\n    \"distance\": 0,\r\n    \"time\": \"\",\r\n    \"workout_type_id\": 0,\r\n    \"workout_type_name\": \"\",\r\n    \"pace_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/ [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/status [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/status",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"status"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/results [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"distance\": 0,\r\n    \"pace\": \"\",\r\n    \"time\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/results",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"results"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/mark [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/mark",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"mark"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/mark [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/mark",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"mark"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/like [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/like",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"like"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/like [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/like",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"like"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/copy [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dates\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/copy",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"copy"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/pace_chart [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/pace_chart",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"pace_chart"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/athlete_notes [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/athlete_notes",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"athlete_notes"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workouts/:id/athlete_notes [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/workouts/:id/athlete_notes",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workouts",
+						":id",
+						"athlete_notes"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "ce8e29e7-1db1-4ee3-a35b-963006290494",
+		"name": "fleetfeet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/fleet/survey_questions [WRONG]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/fleet/survey_questions",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"fleet",
+						"survey_questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/fleet/:alias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/fleet/:alias",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"fleet",
+						":alias"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/fleet/:alias/survey_questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/fleet/:alias/survey_questions",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"fleet",
+						":alias",
+						"survey_questions"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/fleet/:alias/waiver",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/fleet/:alias/waiver",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"fleet",
+						":alias",
+						"waiver"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/fleet/registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"email\": \"\",\r\n\t\"phone\": \"\",\r\n\t\"password\": \"\",\r\n    \"birth_date\": \"\",\r\n    \"survey\": \"\",\r\n    \"event_alias\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/fleet/registration",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"fleet",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/fleet/pay [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"\", \r\n    \"event_alias\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/fleet/pay",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"fleet",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/fleet/test [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/fleet/test",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"fleet",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

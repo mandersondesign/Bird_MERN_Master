@@ -1,0 +1,113 @@
+@import '../../../../../../styles/variables.less'; 
+
+@media (max-width: 576px) {
+  .wrapperBlocks {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.wrapperSecondStep {
+  margin-top: 30px;
+  .contactUs {
+  padding-top: 15px;
+  font-family: SFProDisplay-Regular;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: -0.11px;
+  text-align: center;
+  color: #7a7a7a !important;
+  }
+  .emailToUs {
+    text-decoration: underline;
+    color: @color-nav-link;
+  }
+  .emailToUs:visited {
+    color: @hover-color-nav-link
+  }
+  .emailToUs:hover {
+    color: @hover-color-nav-link;
+  }
+  .top {
+    font-family: Celias-Regular;
+    color: #515151;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .wrapperBlocks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    .wrapperBlock {
+      border: 1px solid #d3d3d3;
+      border-radius: 10px;
+      width: 280px;
+      padding: 16px 12px;
+      margin: 10px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .title {
+        text-align: start;
+        font-size: 16px;
+        color: black;
+        font-weight: 600;
+      }
+      .maxAthletes {
+        display: flex;
+        justify-content: center;
+      }
+
+      .wrapperPrice {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        color: #7C7C7C;
+        font-family: Celias-thin;
+        font-size: 24px;
+        height: 100px;
+        .dollarSign {
+          padding-top: 25px;
+        }
+        .monthlyPrice {
+          align-self: flex-end;
+          padding-bottom: 10px;
+        }
+        .price {
+          color: black;
+          font-weight: 900;
+          font-size: 75px;
+        }
+
+      }
+
+      ul {
+        padding: 0;
+        margin: 20px 0 0 20px;
+        color: black;
+        font-size: 14px;
+      }
+      .planIncludes {
+        font-size: 18px;
+      }
+
+      .description {
+        color: #7C7C7C;
+        font-size: 15px;
+      }
+
+      .button {
+        width: 100%;
+        margin-top: 25px;
+        text-transform: uppercase;
+      }
+      
+    }
+  }
+}

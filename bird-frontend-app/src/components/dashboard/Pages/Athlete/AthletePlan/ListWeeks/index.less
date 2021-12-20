@@ -1,0 +1,141 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapperPhases {
+  border-top: 1px solid #F8F7F4;
+  padding: 20px;
+  margin-bottom: 20px;
+  flex: 1;
+  min-height: fit-content;
+  border-radius: 10px;
+
+  .iconEdit {
+    margin-left: 10px;
+    font-size: 25px;
+    color: #A0A0A0;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: SFProText-Bold;
+    
+    .wrapperTitle {
+      display: flex;
+      flex-direction: column;
+  
+      .titlePhases {
+        color: #BCBCBC;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .wrapperTitleWeek {
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 480px) {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        svg:hover {
+          cursor: pointer;
+        }
+      
+        .titleWeek {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-weight: bold;
+          font-size: 20px;
+          color: black;
+          margin-right: 10px;
+
+          div:first-child {
+            margin-right: 10px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+
+        .wrapperLastIcon {
+          display: flex;
+          align-items: center;
+        }
+  
+        .line {
+          width: 1px;
+          height: 100%;
+          margin: 0 10px;
+          background-color: #DADADA;
+          @media screen and (max-width: 480px) {
+            width: 100%;
+            height: 1px;
+            margin: 10px 0;
+          }
+        }
+      }
+ 
+      .titleCoachNote {
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #434343;
+        margin-top: 10px;
+      }
+      
+      .input {
+        margin-top: 7px;
+        padding-left: 10px;
+        width: 700px;
+        font-size: 15px;
+        resize: none;
+        font-family: Celias-Regular;
+      }
+
+      .descriptionPublished, .description {
+        margin-top: 7px;
+        border-radius: 7px;
+        max-width: 700px;
+        word-wrap: break-word;
+        font-family: Celias-Regular;
+      }
+
+      .description {
+        background-color: #F9F9F9;
+        padding: 12px;
+        transition: 0.3s ease;
+        &:hover {
+          cursor: text;
+          background-color: #F8F8F8;
+          box-shadow: 0 0 10px 0px #969693;
+        }
+      }
+    }
+  }
+
+  .wrapperWorkouts {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-gap: 12px;
+    align-items: stretch;
+  }
+}
+
+div[id="wrapperPhasesAnimation"] {
+  animation: blinking 10s;
+}
+
+@keyframes blinking {
+  0%{
+    background-color: #DFEBFD;
+  }
+  100%{
+    background-color: white;
+  }
+}

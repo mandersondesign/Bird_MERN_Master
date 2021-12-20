@@ -1,0 +1,5 @@
+@import "./Sized-variables.scss";
+
+@function helios-sizes($small, $medium, $large) {
+  @return ($sized-small: $small, $sized-medium: $medium, $sized-large: $large);
+}

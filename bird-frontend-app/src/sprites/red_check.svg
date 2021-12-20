@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>athlete-status-icon/red strike</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Active-Athletes---Spring-Half" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="my-active-athletes---spring-half" transform="translate(-898.000000, -569.000000)" fill="#FFFFFF" stroke="#E64614" stroke-width="1.5">
+            <g id="Group-13" transform="translate(280.000000, 539.000000)">
+                <g id="athlete-status-icon/red-strike" transform="translate(619.000000, 31.000000)">
+                    <circle id="Oval" cx="9" cy="9" r="9"></circle>
+                    <line x1="3" y1="3" x2="15" y2="15" id="Path"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

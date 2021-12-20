@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "427a0e7f-7cd5-43d1-9773-2505a7e61dd3",
+		"name": "program",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/program/pay",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\",\r\n    \"coupon\": \"\",\r\n    \"token\": \"\",\r\n    \"program\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/program/pay",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"program",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/program/:alias/coupons/:coupon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/program/:alias/coupons/:coupon",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"program",
+						":alias",
+						"coupons",
+						":coupon"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						},
+						{
+							"key": "coupon"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/program/:alias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/program/:alias",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"program",
+						":alias"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

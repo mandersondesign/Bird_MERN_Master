@@ -1,0 +1,73 @@
+.flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+.textStyle {
+  font-stretch: normal;
+  font-style: normal;
+}
+
+/* -------------------- */
+
+.sections {
+  .section {
+    width: 85%;
+    margin: 20px auto;
+
+    .title {
+      &:extend(.flexCenter);
+
+      span {
+        &:extend(.flexCenter);
+      }
+
+      .text {
+        margin-left: 10px;
+        text-transform: uppercase;
+        font-family: SFProText-Heavy;
+        font-size: 10px;
+        font-weight: 900;
+        color: #a0a0a0;
+        line-height: normal;
+        letter-spacing: 0.5px;
+        &:extend(.textStyle);
+      }
+    }
+
+    .items {
+      margin-top: 5px;
+
+      .item {
+        &:extend(.flexCenter);
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-family: SFProText-Regular;
+        opacity: 0.9;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.35;
+        letter-spacing: -0.2;
+        color: #B1B0AE;
+        &:extend(.textStyle);
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-right: 10px;
+        }
+
+        .amount {}
+      }
+
+      .activeItem {
+        color: black;
+      }
+    }
+  }
+}

@@ -1,0 +1,464 @@
+{
+	"info": {
+		"_postman_id": "7efd73ec-7b72-4df1-b533-5cdf55f52233",
+		"name": "coaches",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/coaches/me/athletes [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/me/athletes?limit=&page=&sort=&sort_type=",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						"me",
+						"athletes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "page",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "sort",
+							"value": "",
+							"description": "STRING"
+						},
+						{
+							"key": "sort_type",
+							"value": "",
+							"description": "STRING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/me/athletes/unassigned [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/me/athletes/unassigned?limit=&page=&sort=&sort_type=",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						"me",
+						"athletes",
+						"unassigned"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "page",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "sort",
+							"value": "",
+							"description": "STRING"
+						},
+						{
+							"key": "sort_type",
+							"value": "",
+							"description": "STRING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/me/athletes/meta [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/me/athletes/meta",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						"me",
+						"athletes",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/request_callback [AUTH][ATHLETE]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/request_callback",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						"request_callback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/invite [AUTH][ADMIN]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"email\": \"\",\r\n    \"phone\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/invite",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						"invite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id/info [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id/info",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id",
+						"info"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id/info [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"info\": {\r\n        \"about\": \"\",\r\n        \"specialties\": []\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id/info",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id",
+						"info"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id/measurement [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"measurement_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id/measurement",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id",
+						"measurement"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id/cards [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id/cards",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id",
+						"cards"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id/image [AUTH][ADMIN]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id/image",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id",
+						"image"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id/custom_questions [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id/custom_questions",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id",
+						"custom_questions"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id/custom_questions [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"questions\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id/custom_questions",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id",
+						"custom_questions"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/coaches/:coach_id/sms_notifications [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"is_sms_enabled\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/coaches/:coach_id/sms_notifications",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"coaches",
+						":coach_id",
+						"sms_notifications"
+					],
+					"variable": [
+						{
+							"key": "coach_id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

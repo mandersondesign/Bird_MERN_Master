@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+ front:
+   command: ["sh", "-c", "yarn && npm run webpack:feet"]
+   build:
+    context: .
+    dockerfile: docker/dev/Dockerfile
+   volumes:
+     - ./:/app  # only dev

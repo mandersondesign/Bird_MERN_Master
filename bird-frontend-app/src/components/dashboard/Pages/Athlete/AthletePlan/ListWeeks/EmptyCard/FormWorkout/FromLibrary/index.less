@@ -1,0 +1,112 @@
+.wrapperNewWorkout {
+  .wrapperAutoComplete {
+    position: relative;
+
+    .iconArrow {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 12px;
+      color: #80807E;
+      transition: 0.3s ease;
+    }
+
+    .iconArrowActive {
+      transform: rotate(180deg);
+    }
+  }
+
+  .wrapperNewWorkoutBody {
+    display: flex;
+
+    .title {
+      text-transform: uppercase;
+      color: #A2A2A2;
+      font-size: 9px;
+      font-weight: bold;
+    }
+
+    .input {
+      background-color: #F2F2EE;
+      width: 250px;
+    }
+
+
+    .block {
+      width: 250px;
+      margin-right: 20px;
+
+      .wrapperType {
+        display: flex;
+        flex-direction: column;
+        div[class~='ant-select'] {
+          width: 250px;
+        }
+      }
+      .hideDescription {
+        display: none;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .clearBtn {
+      color: #A2A2A2;
+      text-decoration: underline;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .addBtn {
+      background-color: #F5EB00;
+      color: black;
+      border: none;
+    }
+    .titleBtn {
+      margin-right: 370px;
+    }
+  }
+
+  .blockLast {
+    margin: 0 !important;
+  }
+}
+
+div[class~='ant-select-dropdown'] {
+  min-height: 180px;
+  background-color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.titleInput {
+  background-color: #F2F2EE;
+  width: 250px !important;
+}
+.descriptionLink {
+  height: 115px;
+  overflow-wrap: break-word;
+  min-height: 115px;
+  max-height: 115px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #F2F2EE;
+  width: 250px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  line-height: 1.5;
+  opacity: 0.7;
+  border-radius: 10px;
+  a, a:visited {
+    color: #1890ff;
+  }
+}
+.descriptionLink:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+

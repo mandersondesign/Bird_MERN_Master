@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "dd941b4c-9bd0-4aa3-bfd4-44e0a84c674f",
+		"name": "apple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{API_URL}}/v1/apple/save_payment/:alias",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQ0LCJzZXNzaW9uX2lkIjo3MDExLCJpYXQiOjE2MjUyNDM3MjV9.KUrUG-Qp_jWyZZDXYVTncvG8_QSFtvC6tZeBV7F5CXQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"coupon\": \"\", \r\n    \"appleTransactionId\": \"3\",\r\n    \"appleTransactionPayload\": { \"a\": 1, \"b\": \"two\" }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/apple/save_payment/:alias",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"apple",
+						"save_payment",
+						":alias"
+					],
+					"variable": [
+						{
+							"key": "alias",
+							"value": "runclub"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

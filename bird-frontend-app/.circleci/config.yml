@@ -1,0 +1,312 @@
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:10
+
+version: 2
+jobs:
+  checkout_code:
+    <<: *defaults
+    steps:
+#      - restore_cache:
+#          keys:
+#            - source-{{ .Branch }}-{{ .Revision }}
+#            - source-{{ .Branch }}-
+#            - source-
+
+      - checkout
+
+      - save_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - "~/repo"
+  install:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: "Yarn install"
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+  build_prod:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: "Build PROD app"
+          command: npm run webpack:prod
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - static
+            - package.json
+  build:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: "Build DEV app"
+          command: npm run webpack:dev
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - static
+            - package.json
+  build-fleetfeet-dev:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: "Build Fleet Feet DEV app"
+          command: npm run webpack:devfeet
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - fleetfeet
+            - package.json
+  build-checkout-dev:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: "Build Checkout DEV app"
+          command: yarn webpack:devcheckout
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - marketing
+            - package.json
+  deploy:
+    <<: *defaults
+    environment:
+      - STAGING_BUCKET: YOUR_STAGING_BUCKET_NAME
+      - PRODUCTION_BUCKET: devapp.bird.coach
+      - STAGING_DISTRIBUTION_ID: YOUR_STAGING_DISTRIBUTION_ID
+      - PRODUCTION_DISTRIBUTION_ID: E1QRM2GIIHSGIG
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      # workaround https://discuss.circleci.com/t/failed-to-fetch-debian/29258
+      - run: |
+          sudo rm /etc/apt/sources.list
+          echo "deb http://archive.debian.org/debian/ jessie main" | sudo tee -a /etc/apt/sources.list
+          echo "deb-src http://archive.debian.org/debian/ jessie main" | sudo tee -a /etc/apt/sources.list
+          echo "Acquire::Check-Valid-Until false;" | sudo tee -a /etc/apt/apt.conf.d/10-nocheckvalid
+          echo 'Package: *\nPin: origin "archive.debian.org"\nPin-Priority: 500' | sudo tee -a /etc/apt/preferences.d/10-archive-pin
+          sudo apt-get update
+      - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - run: unzip awscliv2.zip
+      - run: sudo ./aws/install
+      - run: aws --version
+      - run: sudo apt-get install less
+      - run: export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - run: export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - run: export AWS_DEFAULT_REGION=us-east-1
+      - run: export AWS_PAGER=''
+      - run:
+          name: "Deploy to AWS"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync static/ s3://${PRODUCTION_BUCKET} --delete
+              aws cloudfront create-invalidation --distribution-id "${PRODUCTION_DISTRIBUTION_ID}" --paths "/*"
+            elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
+              aws s3 sync static/ s3://${STAGING_BUCKET} --delete
+              aws cloudfront create-invalidation --distribution-id "${STAGING_DISTREBUTION_ID}" --paths "/*"
+            fi
+
+  deploy-fleetfeet-dev:
+    <<: *defaults
+    environment:
+      - PRODUCTION_BUCKET: devfleetfeet.bird.coach
+      - PRODUCTION_DISTRIBUTION_ID: EHYTUU7S0SW4P
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      # workaround https://discuss.circleci.com/t/failed-to-fetch-debian/29258
+      - run: |
+          sudo rm /etc/apt/sources.list
+          echo "deb http://archive.debian.org/debian/ jessie main" | sudo tee -a /etc/apt/sources.list
+          echo "deb-src http://archive.debian.org/debian/ jessie main" | sudo tee -a /etc/apt/sources.list
+          echo "Acquire::Check-Valid-Until false;" | sudo tee -a /etc/apt/apt.conf.d/10-nocheckvalid
+          echo 'Package: *\nPin: origin "archive.debian.org"\nPin-Priority: 500' | sudo tee -a /etc/apt/preferences.d/10-archive-pin
+          sudo apt-get update
+      - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - run: unzip awscliv2.zip
+      - run: sudo ./aws/install
+      - run: aws --version
+      - run: sudo apt-get install less
+      - run: export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - run: export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - run: export AWS_DEFAULT_REGION=us-east-1
+      - run: export AWS_PAGER=''
+      - run:
+          name: "Deploy to AWS"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync fleetfeet/ s3://${PRODUCTION_BUCKET} --delete
+              aws cloudfront create-invalidation --distribution-id "${PRODUCTION_DISTRIBUTION_ID}" --paths "/*"
+            fi
+
+  deploy-checkout-dev:
+    <<: *defaults
+    environment:
+      - PRODUCTION_BUCKET: devcheckout.bird.coach
+      - PRODUCTION_DISTRIBUTION_ID: E123GNWDEKOYX9
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      # workaround https://discuss.circleci.com/t/failed-to-fetch-debian/29258
+      - run: |
+          sudo rm /etc/apt/sources.list
+          echo "deb http://archive.debian.org/debian/ jessie main" | sudo tee -a /etc/apt/sources.list
+          echo "deb-src http://archive.debian.org/debian/ jessie main" | sudo tee -a /etc/apt/sources.list
+          echo "Acquire::Check-Valid-Until false;" | sudo tee -a /etc/apt/apt.conf.d/10-nocheckvalid
+          echo 'Package: *\nPin: origin "archive.debian.org"\nPin-Priority: 500' | sudo tee -a /etc/apt/preferences.d/10-archive-pin
+          sudo apt-get update
+      - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - run: unzip awscliv2.zip
+      - run: sudo ./aws/install
+      - run: aws --version
+      - run: sudo apt-get install less
+      - run: export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - run: export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - run: export AWS_DEFAULT_REGION=us-east-1
+      - run: export AWS_PAGER=''
+      - run:
+          name: "Deploy to AWS"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync marketing/ s3://${PRODUCTION_BUCKET} --delete
+              aws cloudfront create-invalidation --distribution-id "${PRODUCTION_DISTRIBUTION_ID}" --paths "/*"
+            fi
+
+  deploy_prod:
+    <<: *defaults
+    environment:
+      - PROD_BUCKET: app.bird.coach
+      - PROD_DISTRIBUTION_ID: E146SJXUJNT5HQ
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      # workaround https://discuss.circleci.com/t/failed-to-fetch-debian/29258
+      - run: |
+          sudo rm /etc/apt/sources.list
+          echo "deb http://archive.debian.org/debian/ jessie main" | sudo tee -a /etc/apt/sources.list
+          echo "deb-src http://archive.debian.org/debian/ jessie main" | sudo tee -a /etc/apt/sources.list
+          echo "Acquire::Check-Valid-Until false;" | sudo tee -a /etc/apt/apt.conf.d/10-nocheckvalid
+          echo 'Package: *\nPin: origin "archive.debian.org"\nPin-Priority: 500' | sudo tee -a /etc/apt/preferences.d/10-archive-pin
+          sudo apt-get update
+      - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - run: unzip awscliv2.zip
+      - run: sudo ./aws/install
+      - run: aws --version
+      - run: sudo apt-get install less
+      - run: export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - run: export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - run: export AWS_DEFAULT_REGION=us-east-1
+      - run: export AWS_PAGER=''
+      - run:
+          name: "Deploy to AWS"
+          command: |
+              aws s3 sync static/ s3://${PROD_BUCKET} --delete
+              aws cloudfront create-invalidation --distribution-id "${PROD_DISTRIBUTION_ID}" --paths "/*"
+workflows:
+  version: 2
+  build_and_deploy_dev:
+    jobs:
+      - checkout_code
+      - install:
+          requires:
+            - checkout_code
+      # - test:
+      #     requires:
+      #       - install
+      - build:
+          requires:
+            - install
+      - deploy:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build
+      - build-fleetfeet-dev:
+          requires:
+            - install
+      - deploy-fleetfeet-dev:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build-fleetfeet-dev
+      - build-checkout-dev:
+          requires:
+            - install
+      - deploy-checkout-dev:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build-checkout-dev
+
+  build_and_deploy_prod:
+    jobs:
+      - checkout_code:
+          filters:
+            # ignore any commit on any branch by default
+            branches:
+              ignore: /.*/
+            # only act on version tags
+            tags:
+              only: /^prod.*/
+      - install:
+          requires:
+            - checkout_code
+          filters:
+            # ignore any commit on any branch by default
+            branches:
+              ignore: /.*/
+            # only act on version tags
+            tags:
+              only: /^prod.*/
+      # - test:
+      #     requires:
+      #       - install
+      - build_prod:
+          requires:
+            - install
+          filters:
+            # ignore any commit on any branch by default
+            branches:
+              ignore: /.*/
+            # only act on version tags
+            tags:
+              only: /^prod.*/
+      - deploy_prod:
+          requires:
+            - build_prod
+          filters:
+            # ignore any commit on any branch by default
+            branches:
+              ignore: /.*/
+            # only act on version tags
+            tags:
+              only: /^prod.*/

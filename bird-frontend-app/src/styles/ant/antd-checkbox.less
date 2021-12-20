@@ -1,0 +1,18 @@
+@checkbox-prefix-cls: ~'@{ant-prefix}-checkbox';
+
+.@{checkbox-prefix-cls} {
+    .@{checkbox-prefix-cls}-inner {
+      border-radius: 4px;
+    }
+	&.@{checkbox-prefix-cls}-checked {
+		.@{checkbox-prefix-cls}-inner {
+          border-radius: 4px;
+			&:after {
+              border: 1.5px solid @black;
+              border-top: 0;
+              border-left: 0;
+              left: 4px;
+			}
+		}
+	}
+}

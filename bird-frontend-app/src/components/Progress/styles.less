@@ -1,0 +1,43 @@
+@import '../../styles/index';
+
+.progress-d-none {
+	display: none;
+}
+
+.for-ant-progress-bg() {
+	border-radius: 0;
+	border-top-left-radius: 10px;
+	height: 6px;
+	opacity: 0.3;
+	background-image: @green-gradient-2;
+}
+.for-progress-line-for-block() {
+	position: relative;
+	top: 17px;
+	z-index: 1;
+}
+
+.progress-line-for-block {
+	.for-progress-line-for-block();
+
+	:global(.ant-progress-inner) {
+		background-color: transparent;
+
+		:global(.ant-progress-bg) {
+			.for-ant-progress-bg();
+		}
+	}
+}
+
+.progress-line-for-complete-block {
+	.for-progress-line-for-block();
+
+	:global(.ant-progress-inner) {
+		background-color: transparent;
+
+		:global(.ant-progress-bg) {
+			.for-ant-progress-bg();
+			border-top-right-radius: 10px;
+		}
+	}
+}

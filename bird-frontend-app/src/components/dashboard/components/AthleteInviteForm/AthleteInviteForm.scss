@@ -1,0 +1,29 @@
+@import "../../../../styles/bem.scss";
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/mixins.scss";
+
+#{ bem-block(AthleteInviteForm) } {
+}
+
+#{ bem-element(AthleteInviteForm, title) } {
+  color: $black;
+  font-family: SFProDisplay-Bold;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+#{ bem-element(AthleteInviteForm, form) } {
+  min-width: 350px;
+  padding-top: 5px;
+}
+
+#{ bem-element(AthleteInviteForm, actions) } {
+  @include flex(row, flex-start);
+  padding-top: 5px;
+}
+
+#{ bem-element(AthleteInviteForm, button) } {
+  margin-left: 25px;
+  margin-right: 5px;
+}

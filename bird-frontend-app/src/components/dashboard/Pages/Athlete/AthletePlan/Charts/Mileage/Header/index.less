@@ -1,0 +1,86 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  // align-items: flex-end;
+  margin-bottom: 15px;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  .left {
+    .title {
+      font-family: SFProDisplay-Bold;
+      font-size: 24px;
+      color: #000000;
+      letter-spacing: -0.4px;
+      line-height: 24px;
+    }
+
+    .rows {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .section {
+        margin-right: 24px;
+      }
+    }
+
+    .subTitle {
+      font-family: SFProDisplay-Bold;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #a0a0a0;
+      margin-top: 25px;
+      line-height: 2;
+      letter-spacing: 0.6px;
+    }
+
+    .textMiles {
+      font-family: SFProDisplay-Black;
+      font-size: 20px;
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: 0;
+    }
+  }
+
+  .circle {
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 100%;
+    background-color: #DADADA;
+    margin-right: 7px;
+  }
+
+  .right {
+    display: flex;
+    margin-bottom: 10px;
+    @media screen and (max-width: 750px) {
+      flex-direction: column;
+      min-width: 100px;
+    }
+    @media screen and (max-width: 500px) {
+      flex-direction: row;
+      min-width: auto;
+      margin-top: 10px;
+      margin-left: -15px;
+    }
+
+    .assignedText, .ranText {
+      display: flex;
+      text-transform: uppercase;
+      align-items: center;
+      margin-left: 15px;
+      font-family: SFProDisplay-Bold;
+      font-size: 10px;
+      color: #777777;
+      line-height: 2;
+      letter-spacing: 0.6px;
+    }
+
+    .ranText .circle {
+      background-color: #397035;
+    }
+  }
+}

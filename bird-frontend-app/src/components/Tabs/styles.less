@@ -1,0 +1,32 @@
+@import '../../styles/index';
+@import '../../styles/mixins.less';
+
+:global(.ant-tabs-tab-active) {
+	height: auto;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+
+:global(.ant-tabs-tab) {
+	font-size: 14px;
+    font-weight: bold;
+	text-align: left;
+	color: @dark-grayish;
+}
+
+:global(.ant-tabs-bar) {
+  // border-bottom: 1px solid @dark-grayish;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: none
+}
+
+:global(.ant-tabs-ink-bar) {
+  bottom: -2px;
+}
+:global(.ant-tabs-nav) {
+  border-bottom: 2px solid @dark-grayish;
+  margin-bottom: 1px;
+}

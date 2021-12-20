@@ -1,0 +1,10 @@
+@import "../../styles/bem.scss";
+
+.moving {
+  pointer-events: none;
+  cursor: grabbing;
+}
+
+#{ bem-block(Movable) } {
+  position: absolute;
+}

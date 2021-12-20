@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'Celias-Bold';
+  src: url("Celias-Bold/Celias-Bold.eot");
+  src: url("Celias-Bold/Celias-Bold.eot?#iefix") format('embedded-opentype'), url("Celias-Bold/Celias-Bold.woff") format('woff'), url("Celias-Bold/Celias-Bold.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Celias-Medium';
+  src: url("Celias-Medium/Celias-Medium.eot");
+  src: url("Celias-Medium/Celias-Medium.eot?#iefix") format('embedded-opentype'), url("Celias-Medium/Celias-Medium.woff") format('woff'), url("Celias-Medium/Celias-Medium.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Celias-Regular';
+  src: url("Celias-Regular/Celias.eot");
+  src: url("Celias-Regular/Celias.eot?#iefix") format('embedded-opentype'), url("Celias-Regular/Celias.woff") format('woff'), url("Celias-Regular/Celias.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Celias-Thin';
+  src: url("Celias-Thin/Celias-Thin.eot");
+  src: url("Celias-Thin/Celias-Thin.eot?#iefix") format('embedded-opentype'), url("Celias-Thin/Celias-Thin.woff") format('woff'), url("Celias-Thin/Celias-Thin.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'SFProText-Bold';
+  src: url("SFProText/SF-Pro-Text-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'SFProText-Heavy';
+  src: url("SFProText/SF-Pro-Text-Heavy.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'SFProText-Regular';
+  src: url("SFProText/SF-Pro-Text-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'SFProDisplay-Bold';
+  src: url("SFProDisplay/SF-Pro-Display-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto;
+}
+
+
+@font-face {
+  font-family: 'SFProDisplay-Light';
+  src: url("SFProDisplay/SF-Pro-Display-Light.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'SFProDisplay-Black';
+  src: url("SFProDisplay/SF-Pro-Display-Black.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'SFProDisplay-Regular';
+  src: url("SFProDisplay/SF-Pro-Display-Regular.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url("Gotham-Bold/Gotham\ Bold.otf");
+}
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url("Gotham-Light/Gotham\ Light.otf");
+}
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url("Gotham-Medium/Gotham\ Medium.otf");
+}

@@ -1,0 +1,55 @@
+@import '../../../styles/index';
+
+.horizontalBiggest {
+	.card-title {
+		font-family: LetoSans;
+		font-size: 34px;
+		line-height: 1.09;
+	}
+}
+
+.card {
+	&-title {
+		font-family: Rubik;
+		color: @black;
+		font-size: 19px;
+		font-weight: 500;
+		line-height: 1.26;
+		&:hover {
+			color: @dark-green;
+		}
+	}
+	&-description {
+		font-family: Rubik;
+		color: @grey;
+		font-size: 16px;
+		line-height: 1.38;
+		margin-top: 10px;
+	}
+	&-content {
+		font-family: Rubik;
+		padding: 18px 19px 21px;
+		z-index: 10;
+		&.horizontalBiggest {
+			padding: 27px 24px 21px;
+		}
+		&-promo {
+			.card-title {
+				font-size: 34px;
+				line-height: 1.09;
+			}
+		}
+		&-testcard {
+			padding: 128px 16px 25px 25px;
+			z-index: 10;
+			height: 79%;
+			.card-title:hover {
+				color: @black;
+			}
+		}
+	}
+}
+
+.service {
+	padding: 7px 20px 21px;
+}

@@ -1,0 +1,68 @@
+.wrapperYourOrder {
+  border: solid 1px #ebebeb;
+  background-color: #ebebeb;
+  padding: 22px 24px;
+  font-family: Gotham, sans-serif;
+  width: 410px;
+  height: fit-content;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+
+    .price {
+      width: 240px;
+    }
+
+    .priceDescription {
+      height: 80px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    .title {
+      width: 200px;
+    }
+  }
+
+  .mainTitle {
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .boldText {
+    font-weight: bold;
+    font-family: Gotham-Medium;
+  }
+
+  .row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .title, .price {
+      font-size: 14px;
+      color: black;
+    }
+
+    .price {
+      text-align: right;
+    }
+  }
+
+  .firstRow {
+    margin: 24px 0 28px 0;
+  }
+
+  .rowMargin {
+    margin-bottom: 8px;
+  }
+
+  .line {
+    height: 1px;
+    background-color: #bbbbbb;
+    width: 100%;
+    margin: 24px 0 14px 0;
+  }
+}

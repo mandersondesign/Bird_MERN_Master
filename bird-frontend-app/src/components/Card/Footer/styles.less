@@ -1,0 +1,43 @@
+@import '../../../styles/index';
+
+.footer {
+	//display: flex;
+	//justify-content: space-between;
+	display: block;
+	padding: 20px 30px 20px 20px;
+	z-index: 10;
+	flex: 0 0 auto;
+	&-author {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		margin-right: 13px;
+		&-block {
+			display: flex;
+			max-width: 100%;
+			padding-right: 23px;
+		}
+	}
+	&-time {
+		flex: 1 0 auto;
+	}
+}
+
+.favourite {
+	flex: 1 0 auto;
+	position: absolute;
+	z-index:20;
+	right: 19px;
+	bottom: 11px;
+	cursor: pointer;
+
+	path{
+		fill: @chinese-white;
+	}
+}
+.favourite-hover {
+	&:extend(.favourite);
+	path{
+		fill: @dark-green;
+	}
+}

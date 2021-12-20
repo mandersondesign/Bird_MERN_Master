@@ -1,0 +1,198 @@
+.textDots {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapperCardWorkout {
+  background-color: #f9f9f9;
+  padding: 16px 6px;
+  border-radius: 6px;
+  height: 100%;
+
+  .hiddenText {
+    opacity: 0;
+  }
+  .headerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    font-family: SFProText-Bold;
+    height: 40px;
+
+    .day {
+      font-size: 10px;
+      color: #777777;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 10px;
+    }
+
+    .num {
+      font-size: 24px;
+      color: #000000;
+      margin-top: 3px;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+    }
+  }
+
+  .emptyBody:hover {
+    cursor: pointer;
+  }
+
+  .emptyBody,
+  .body {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    padding: 12px;
+
+    .iconAdd {
+      color: #a0a0a0;
+    }
+
+    .textAdd {
+      margin-left: 8px;
+      font-family: SFProText-Bold;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      color: #a0a0a0;
+      text-transform: uppercase;
+    }
+  }
+
+  .body {
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 6px;
+    border: solid 0.5px #ebebeb;
+    height: calc(100% - 56px);
+    margin-bottom: 16px;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .sectionType {
+      margin-top: 6px;
+      font-family: SFProText-Bold;
+      width: 100%;
+
+      .title,
+      .hiddenText {
+        font-size: 10px;
+        color: #777777;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        line-height: 10px;
+        text-transform: uppercase;
+        &:extend(.textDots);
+      }
+
+      .type {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #000000;
+        margin-top: 10px;
+        height: 45px;
+
+        .ellipsis {
+          width: 75px;
+        }
+
+        .label {
+          margin-right: 10px;
+          flex: 1;
+          &:extend(.textDots);
+        }
+      }
+    }
+
+    .section,
+    .sectionNote,
+    .distance {
+      margin-top: 16px;
+      font-family: SFProText-Regular;
+      width: 100%;
+
+      .title {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        line-height: 10px;
+        color: #777777;
+        font-weight: 600;
+      }
+
+      .value {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 5px;
+        letter-spacing: -0.2px;
+        line-height: 19px;
+        color: #a0a0a0;
+
+        .measurment {
+          text-transform: uppercase;
+          font-size: 10px;
+          letter-spacing: 0.6px;
+          line-height: 10px;
+          margin-left: 5px;
+        }
+
+        .black {
+          font-family: SFProText-Bold;
+          color: black;
+          margin-right: 3px;
+        }
+      }
+    }
+
+    .distance {
+      margin-top: 0;
+    }
+
+    .sectionNote {
+      font-family: SFProText-Regular;
+
+      .title {
+        font-size: 10px;
+        color: #777777;
+        letter-spacing: 1px;
+      }
+
+      .value {
+        font-size: 12px;
+        line-height: 1.33;
+        letter-spacing: -0.1px;
+        color: #000000;
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.wrapperCardWorkoutBlack {
+  background-color: black;
+
+  .header {
+    .day,
+    .num {
+      color: white;
+    }
+  }
+}

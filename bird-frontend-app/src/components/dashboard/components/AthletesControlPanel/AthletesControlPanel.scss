@@ -1,0 +1,8 @@
+@import "../../../../styles/bem.scss";
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/mixins.scss";
+
+#{ bem-block(AthletesControlPanel) } {
+  @include flex(row, center, center, space-between);
+  margin-bottom: 30px;
+}

@@ -1,0 +1,53 @@
+@import '../../../../styles/index';
+@import '../../../../styles/mixins.less';
+
+div[class='helios-athlete-invite-form'] {
+  padding: 10px;
+
+  div[class='ant-row ant-form-item'] {
+    margin-top: 10px;
+  }
+}
+
+div[class='helios-athlete-invite-form__title'] {
+  color: black;
+  font-family: SFProText-Bold, sans-serif;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+label[class='ant-form-item-required'], div[class='ant-col ant-form-item-label'] {
+  font-family: SFProText-Regular, sans-serif;
+  font-size: 11px;
+  line-height: 3;
+  color: #C4C4C4;
+}
+
+span[class='ant-form-item-children'] > * {
+  font-family: Celias-Regular;
+  color: #000000;
+  font-size: 14px;
+}
+
+div[class='helios-athlete-invite-form__actions'] {
+  font-family: SFProText-Heavy, sans-serif;
+    margin-top: 25px;
+}
+
+
+:global(.ant-form-item-required::before) {
+  display: none;
+}
+
+:global(.has-error .ant-form-explain) {
+  font-family: Celias-Regular;
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #ff4c4c;
+  border-color: #ff4c4c !important;
+  margin-left: 8px;
+}
+
+:global(.has-error .ant-input) {
+  border-color: #ff4c4c;
+}

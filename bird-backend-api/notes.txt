@@ -1,0 +1,46 @@
+1. Create a new annotated tag:
+	git tag -a prod3.9.7 -m "Production Release 3.9.7"
+	
+2. Publish tag:
+	git push origin prod3.9.7
+
+3. Merge code from master:
+	git checkout prod
+	git merge master
+	git push origin prod
+	
+4. Create a new release:
+	https://github.com/Bird-Coach/bird-backend-api/releases/new
+
+	target prod
+	Production Release 3.9.7
+
+5. Monitor CircleCI
+	https://app.circleci.com/pipelines/github/Bird-Coach/bird-backend-api
+
+6. Verify in AWS Amazon Container Services that the image is created:
+	https://console.aws.amazon.com/ecr/repositories/private/653628130703/prod?region=us-east-1
+
+7. Modify deploy.yml to have the new tag: prod3.9.7
+	C:\Projects\bird\bird-infra\k8s\api\deploy.yaml
+	C:\Projects\bird\bird-infra\k8s\chatbot\deploy.yaml
+	C:\Projects\bird\bird-infra\k8s\risk\deploy.yaml
+
+8. Commit the changes to infra
+
+9. Apply changes to containers:
+	C:\Projects\bird\bird-infra\k8s\api\kubectl apply -f deploy.yaml
+	C:\Projects\bird\bird-infra\k8s\chatbot\kubectl apply -f deploy.yaml
+	C:\Projects\bird\bird-infra\k8s\risk\kubectl apply -f deploy.yaml
+
+10. Monitor pods:
+	kubectl get pods -w
+
+11. Login do this for both api containers shown by pods
+	kubectl exec -it api-XXXYYYZZZ -- sh
+	npm run migrate:up
+
+	
+
+
+

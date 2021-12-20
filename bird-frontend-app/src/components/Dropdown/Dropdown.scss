@@ -1,0 +1,11 @@
+@import "../../styles/bem.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+#{ bem-block(Dropdown) } {
+  display: inline-block;
+}
+
+#{ bem-block(Item) } {
+  @include flex(row, center);
+}

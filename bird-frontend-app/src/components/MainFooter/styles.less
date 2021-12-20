@@ -1,0 +1,130 @@
+@import '../../styles/index';
+@import '../../styles/mixins';
+
+@menuMaxWidth: 1250px;
+
+.footer {
+	
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	padding-top: 81px;
+	padding-bottom: 69px;
+	border-top: solid 1px @cultured;
+	background-color: @white;
+
+
+	@media screen and (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+		padding-top: 57px;
+		padding-bottom: 40px;
+	}
+
+	.responsive-max(@screen-xs-max, {
+		padding-top: 23px;
+		padding-bottom: 29px;
+	});
+
+	&-menu-content {
+		position: relative;
+		padding-bottom: 80px;
+
+		.responsive-max(@screen-xs-max, {
+			flex-direction: column;
+			padding-bottom: 29px;
+		});
+
+		&-wrap {
+			position: relative;
+			&:global(.ant-col-sm-5) {
+				ul{
+					column-count: 2;
+					.responsive-max(@screen-md-min, {
+						column-count: initial;
+					});
+				}
+				
+			}
+			@media screen and (max-width: @screen-xs-max) {
+				width: 100%;
+				padding: 20px 45px 0 15px;
+				border-top: solid 1px @cultured;
+				border-bottom: solid 1px @cultured;
+			}
+		}
+
+		&-btn {
+			display: none;
+
+			.responsive-max(@screen-xs-max, {
+				display: block;
+				position: absolute;
+				width: 28px;
+				height: 28px;
+				font-size: 28px;
+				color: @grey;
+				top: 18px;
+				right: 10px;
+				cursor: pointer;
+				border: none;
+				outline-width: 0;
+				background-color: inherit;
+				z-index: 99;
+				i {
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			});
+		}
+	}
+
+	&-info {
+		&-ds {
+			font-family: Rubik, sans-serif;
+			font-size: 16px;
+			color: @grey;
+
+			.responsive-max(@screen-xs-max, {
+				margin-bottom: 24px;
+			});
+		}
+
+		&-logo {
+			display: inline-block;
+			position: relative;
+			width: 100px;
+			height: 52px;
+			margin-right: 13px;
+			vertical-align: top;
+		}
+
+		&-text {
+			display: inline-block;
+			position: relative;
+			font-family: Rubik, sans-serif;
+			font-size: 13px;
+			text-align: left;
+			color: @light-grey;
+			vertical-align: top;
+			.responsive-max(@screen-xs-max, {
+				width: ~'calc(100% - 115px)';
+			});
+			span {
+				line-height: 1.23;
+			}
+
+			a {
+				line-height: 1.23;
+				color: @green;
+
+				&:hover {
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+.logo {
+	margin-left: -3px;
+}

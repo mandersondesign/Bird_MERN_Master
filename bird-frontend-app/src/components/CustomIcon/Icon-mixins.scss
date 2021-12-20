@@ -1,0 +1,10 @@
+@import "./Icon-variables.scss";
+
+@mixin helios-icon-colors($face, $light: false) {
+  $colors: map-get(if($light, $icon-colors-light, $icon-colors), $face);
+
+  @if ($colors != null) {
+    fill: map-get($colors, primary);
+    color: map-get($colors, secondary);
+  }
+}

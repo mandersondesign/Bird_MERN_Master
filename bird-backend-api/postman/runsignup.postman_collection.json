@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "4f0789c6-eda8-41e5-bcbc-d86129ca33d4",
+		"name": "runsignup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/runsignup/race [AUTH][ADMIN]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apiKey\": \"\",\r\n    \"apiSecret\": \"\",\r\n    \"raceId\": 0,\r\n    \"mainTag\": \"\",\r\n    \"endDate\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/runsignup/race",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"runsignup",
+						"race"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

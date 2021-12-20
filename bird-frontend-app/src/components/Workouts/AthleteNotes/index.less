@@ -1,0 +1,101 @@
+.athleteNotes {
+  flex: 1;
+
+  .avatar {
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 100%;
+    background-color: #f9f9f9;
+    object-fit: cover;
+  }
+
+  .top {
+    .title {
+      font-size: 15px;
+      color: black;
+      line-height: 15px;
+      letter-spacing: -0.4px;
+      font-family: SFProText-Bold;
+      margin-bottom: 15px;
+    }
+  
+    .messages {
+      .message {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 30px;
+  
+        .right {
+          margin-left: 16px;
+  
+          .name {
+            font-family: SFProText-Bold;
+            font-size: 14px;
+            color: #000000;
+  
+            span {
+              font-family: SFProText-Regular;
+              font-size: 12px;
+              color: #777777;
+            }
+          }
+  
+          .text {
+            font-family: SFProText-Regular;
+            font-size: 14px;
+            color: #000000;
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .sectionInput {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 30px;
+
+    .right {
+      margin-left: 16px;
+      flex: 1;
+
+      .input {
+        border-radius: 8px;
+        padding: 10px 14px;
+        font-size: 14px;
+      }
+
+      .btnAdd {
+        margin-top: 16px;
+        font-size: 12px;
+        font-weight: 900;
+        color: #000000;
+        padding: 4px 14px;
+        font-family: SFProText-Heavy;
+        text-transform: uppercase;
+        border: none;
+        height: 40px;
+        width: 140px;
+        background-color: #f5e106;
+        &:hover {
+          background-color: #eaeaea;
+        }
+      }
+    }
+  }
+}
+
+.valueNotesNone {
+  text-align: left;
+  font-family: SFProText-Regular;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.2px;
+  color: #B5B5B5;
+  font-style: italic;
+  margin-top: 25px;
+}

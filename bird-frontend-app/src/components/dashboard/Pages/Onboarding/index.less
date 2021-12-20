@@ -1,0 +1,88 @@
+.mainWrapperOnboarding {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+
+  .wrapperImg {
+    background-color: #F5F5F5;
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+
+    .wrapperPayment {
+      width: 650px;
+      .title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .buttonComplete {
+        height: auto;
+        padding: 10px;
+        font-size: 20px;
+        width: 200px;
+      }
+    }
+  }
+
+  .wrapperOnboarding {
+    flex: 1;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar { 
+      display: none; 
+    }
+  
+    .header, .actions, .wrapperStep {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrapperStep {
+      overflow: hidden;
+    }
+  
+    .header {
+      margin-top: 40px;
+  
+      .title {
+        color: black;
+        font-size: 24px;
+        margin-left: 10px;
+        font-family: SFProDisplay-Bold;
+        font-weight: bold;
+      }
+      span[class~='ant-progress-text'] {
+        color: #000000;
+      }
+      .progressText {
+  font-family: SFProDisplay-Bold;
+  font-size: 8px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.13px;
+  text-align: center;
+  color: #000000 !important;
+      }
+    }
+  
+    .actions {
+      margin: 50px 0;
+  
+      .marginLeft {
+        margin-left: 15px;
+      }
+      .fontFamily {
+        font-family: SFProText-Heavy;
+      }
+      .wrapperPayment {
+        width: 650px;
+      }
+    }
+  }
+}

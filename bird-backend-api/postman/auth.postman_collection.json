@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "1acf45c7-eda5-4c82-9fdb-3967a8a3d48a",
+		"name": "auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test+1@email.com\",\r\n    \"password\": \"P@ssw0rd1!\",\r\n    \"platform\": \"web\",\r\n    \"survey\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/login",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/logout [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/logout",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/prospect",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"first_name\": \"Why\",\r\n    \"last_name\": \"Not\",\r\n    \"email\": \"why-not@email.com\", \r\n    \"phone\": \"18884449876\", \r\n    \"program\": \"runclub\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/prospect",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"prospect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Test\",\r\n    \"last_name\": \"Test\",\r\n    \"email\": \"test+7@email.com\",\r\n    \"password\": \"P@ssw0rd1!\",\r\n    \"phone\": \"18585551234\",\r\n    \"user_type_id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/registration",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/preRegistrationWithPlan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"email\": \"\",\r\n    \"phone\": \"\",\r\n    \"school\": \"\",\r\n    \"program\": \"\",\r\n    \"utm_source\": \"\",\r\n    \"utm_medium\": \"\",\r\n    \"utm_campaign\": \"\",\r\n    \"utm_term\": \"\",\r\n    \"utm_content\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/preRegistrationWithPlan",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"preRegistrationWithPlan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/preRegistrationWithoutPlan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"email\": \"\",\r\n    \"phone\": \"\",\r\n    \"school\": \"\",\r\n    \"address\": \"\",\r\n    \"city\": \"\",\r\n    \"state\": \"\",\r\n    \"zip_code\": \"\",\r\n    \"country\": \"\",\r\n    \"program\": \"\",\r\n    \"athlete_plan_id\": 0,\r\n    \"utm_source\": \"\",\r\n    \"utm_medium\": \"\",\r\n    \"utm_campaign\": \"\",\r\n    \"utm_term\": \"\",\r\n    \"utm_content\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/preRegistrationWithoutPlan",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"preRegistrationWithoutPlan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/emailConfirm",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/emailConfirm",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"emailConfirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/resendConfirmation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/resendConfirmation",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"resendConfirmation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/resetPassword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/resetPassword",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/changePassword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"key\": \"\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/changePassword",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"changePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/inviteConfirm",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/inviteConfirm",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"inviteConfirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/loginAsCoach [AUTH][ADMIN]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/auth/loginAsCoach",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"loginAsCoach"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

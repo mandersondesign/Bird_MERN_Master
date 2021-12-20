@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "db85aa0b-5416-422a-8ac2-b25b47742b22",
+		"name": "workout_library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/workout_library [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workout_library?workout_type_id=0&limit=0&page=0&sort&sort_type&search",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workout_library"
+					],
+					"query": [
+						{
+							"key": "workout_type_id",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "sort",
+							"value": null
+						},
+						{
+							"key": "sort_type",
+							"value": null
+						},
+						{
+							"key": "search",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workout_library [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"\",\r\n    \"distance\": 0,\r\n    \"time\": \"\",\r\n    \"workout_type_id\": 0,\r\n    \"workout_type_name\": \"\",\r\n    \"pace_id\": 0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/workout_library",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workout_library"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workout_library/:id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workout_library/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workout_library",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workout_library/:id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"\",\r\n    \"distance\": 0,\r\n    \"time\": \"\",\r\n    \"workout_type_id\": 0,\r\n    \"workout_type_name\": \"\",\r\n    \"pace_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/workout_library/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workout_library",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/workout_library/:id [AUTH][COACH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/workout_library/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"workout_library",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

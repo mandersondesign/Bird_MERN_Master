@@ -1,0 +1,75 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": "off",
+    "react-pug/empty-lines": "off",
+    "react-pug/quotes": "off",
+    "react-pug/no-interpolation": "off",
+    "react-pug/no-undef": "off",
+    "no-undef": 2,
+    "semi": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
+    "eol-last": [1, "always"],
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
+    "no-console": ["warn", { "allow": ["warn", "error", "time", "timeEnd"] }],
+    "arrow-parens": ["error", "as-needed"],
+    "one-var": 0,
+    "no-shadow": 0,
+    "no-mixed-operators": 0,
+    "standard/no-callback-literal": 0,
+    "no-unused-vars": 1,
+    "prefer-const": 2,
+    "react/jsx-no-undef": 2,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/jsx-handler-names": 0,
+    "no-redeclare": 2,
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": [0, {"devDependencies": true}],
+    "react/jsx-props-no-spreading": 0,
+    "react/static-property-placement": 0,
+    "class-methods-use-this": "off",
+    "no-loop-func": 0,
+    "no-plusplus": 0,
+    "quotes": "error",
+    "indent": ["error", 2],
+    "no-extra-boolean-cast": 0,
+    "import/prefer-default-export": 0,
+    "consistent-return": 0,
+    "no-useless-escape": 0,
+    "import/no-cycle": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "react/state-in-constructor": [2, "never"],
+    "react/sort-comp": 0,
+    "react/forbid-prop-types": 0,
+    "camelcase": 0,
+    "jsx-a11y/no-static-element-interactions": 0
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {
+    "__BASE_URL__": true,
+    "expect": true
+  },
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "prettier"
+  ]
+}

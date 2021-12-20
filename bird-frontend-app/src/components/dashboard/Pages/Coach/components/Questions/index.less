@@ -1,0 +1,73 @@
+.wrapperOnboarding {
+  margin-bottom: 20px;
+  width: 100%;
+  :global(.has-error .ant-form-explain) {
+    font-family: Celias-Regular;
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #ff4c4c;
+    border-color: #ff4c4c !important;
+    margin-left: 8px;
+    position: absolute
+  }
+
+  .inputSpecial {
+    display: flex;
+    justify-content: space-between;
+    .SpecInput {
+      width: 95%;
+
+    }
+    .input {
+      width: 95%;
+      margin-bottom: -15px;
+    }
+    .deleteIcon {
+      font-size: 16px;
+      display: flex;
+      margin-top: 12px;
+    }
+    .deleteBtn {
+      margin-left: 5px;
+    }
+    .deleteBtn:hover {
+      cursor: pointer;
+    }
+  }
+  .SpecTitle {
+    font-family: Celias-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-bottom: 28px;
+  }
+  .addBtn {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .plus {
+      margin-bottom: 2px;
+    }
+    .text {
+      opacity: 0.8;
+      font-family: SFProText-Heavy;
+      font-size: 12px;
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.5px;
+      text-align: center;
+      color: #a0a0a0;
+      margin-left: 5px;
+    }
+  }
+}

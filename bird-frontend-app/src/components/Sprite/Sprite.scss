@@ -1,0 +1,7 @@
+@import "../../styles/bem.scss";
+
+#{ bem-block(Sprite) } {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+}

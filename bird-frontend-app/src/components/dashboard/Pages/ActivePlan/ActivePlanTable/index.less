@@ -1,0 +1,132 @@
+.tableOfActivelLan {
+  .danger {
+    border-left: 4px solid #e64614;
+  }
+
+  .warning {
+    border-left: 4px solid #e6ad14;
+  }
+
+  .success {
+    border-left: 4px solid #3c6f38;
+  }
+  .workoutTooltip {
+    font-size: 20px;
+  }
+
+  .wrapperUserLink {
+    display: flex;
+    align-items: center;
+
+    .iconWarning {
+      margin-left: 8px;
+      font-size: 20px;
+      color: #e7450d;
+    }
+
+    .userLink:hover {
+      text-decoration: none;
+    }
+    cursor: pointer;
+  }
+
+  .timeText {
+    font-family: SFProDisplay-Bold;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+  }
+
+  .wrapperActions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .hiddenIcon {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+
+    span:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.wrapperSpinMessages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popoverMessages {
+  width: 300px;
+
+  div[class='ant-popover-title'] {
+    font-weight: bold;
+  }
+
+  div[class='ant-popover-inner-content'] {
+    max-height: 300px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #d8d8d8;
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background-color: #d8d8d8;
+    }
+  }
+}
+
+.wrapperMessages {
+  .message {
+    align-items: flex-start;
+  }
+
+  .messageRight {
+    align-items: flex-end;
+  }
+
+  .message,
+  .messageRight {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    .date {
+      font-size: 12px;
+      color: #a3a3a3;
+      font-weight: bold;
+    }
+
+    .textMessage {
+      width: 80%;
+      word-break: break-word;
+      margin-top: 5px;
+      background-color: #ececec;
+      padding: 5px 9px;
+      border-radius: 7px;
+      color: #010101;
+    }
+  }
+}
+
+.iconReInvite:hover {
+  svg path {
+    fill: black;
+  }
+}

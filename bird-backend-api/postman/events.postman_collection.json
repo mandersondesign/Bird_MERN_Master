@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "a4c17884-df0a-4956-8a23-be1832d2b8b1",
+		"name": "events",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/events [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/events",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/events/important_goals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/events/important_goals",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"events",
+						"important_goals"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

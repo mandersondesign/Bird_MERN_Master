@@ -1,0 +1,122 @@
+.wrapperNewWorkout {
+  .wrapperInputLibraryName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .addBtn {
+      margin: 0 0 10px 10px;
+    }
+  }
+
+  .title {
+    text-transform: uppercase;
+    color: #A2A2A2;
+    font-size: 9px;
+    font-weight: bold;
+  }
+
+  .input {
+    background-color: #F2F2EE;
+    width: 250px;
+  }
+
+  .wrapperNewWorkoutBody {
+    display: flex;
+
+    .block {
+      width: 250px;
+      margin-right: 20px;
+
+      .wrapperType {
+        display: flex;
+        flex-direction: column;
+        div[class~='ant-select'] {
+          width: 250px;
+        }
+      }
+      .hideDescription {
+        display: none;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .clearBtn {
+      margin-right: 20px;
+      text-decoration: underline;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .addBtn {
+      background-color: #F5EB00;
+      color: black;
+      border: none;
+    }
+    .titleBtn {
+      margin-right: 370px;
+    }
+    .titleLibrarySave {
+      margin-right: 420px;
+    }
+    .titleLibraryAddNew {
+      margin-right: 450px;
+    }
+  }
+
+  .blockLast {
+    margin: 0 !important;
+  }
+}
+
+div[class~='ant-select-dropdown'] {
+  min-height: 180px;
+  background-color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+
+  li[class~='ant-select-dropdown-menu-item'] {
+    &:hover, &:active, &:focus {
+      background-color: #F5EB00 !important;
+    }
+  }
+
+  li[class~='ant-select-dropdown-menu-item-active'],
+  li[class~='ant-select-dropdown-menu-item-selected'] {
+    background-color: #F5EB00 !important;
+  }
+}
+.titleInput {
+  background-color: #F2F2EE;
+  width: 250px !important;
+}
+.descriptionLink {
+    height: 115px;
+    overflow-wrap: break-word;
+    min-height: 115px;
+    max-height: 115px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #F2F2EE;
+    width: 250px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    line-height: 1.5;
+    opacity: 0.7;
+    border-radius: 10px;
+    a, a:visited {
+      color: #1890ff;
+    }
+}
+.descriptionLink:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+

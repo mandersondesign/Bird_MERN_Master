@@ -1,0 +1,17 @@
+@import "../../styles/bem.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+$outlined-outline-offset: (0, 0, 0, 0);
+$outlined-outline-border: 1px dotted #ddd;
+
+#{ bem-block(Outlined) } {
+  position: relative;
+}
+
+#{ bem-element(Outlined, outline) } {
+  @include position(absolute, $outlined-outline-offset...);
+
+  pointer-events: none;
+  border: $outlined-outline-border;
+}

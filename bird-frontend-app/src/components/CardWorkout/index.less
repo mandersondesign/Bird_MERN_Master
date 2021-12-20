@@ -1,0 +1,97 @@
+.wrapperCard {
+  background-color: white;
+  border: 1px solid #ECECEC;
+  border-radius: 7px;
+  overflow: hidden;
+  height: fit-content;
+  position: relative;
+
+  .body {
+    font-family: SFProText-Bold, sans-serif;
+    padding: 10px 10px 10px;
+
+    .wrapperType {
+      .title {
+        margin-top: 10px;
+        color: #A2A2A2;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 10px;
+      }
+
+      .textNotes {
+        font-size: 13px;
+        color: #0C0C0C;
+        font-family: SFProText-Regular, sans-serif;
+        text-align: left;
+      }
+
+      .blockType {
+        font-size: 17px;
+        display: block;
+        margin-bottom: 5px;
+
+        .label, .labelDistance {
+          color: black;
+          font-weight: bold;
+          font-size: 15px;
+        }
+        .labelDistance {
+          line-height: 0;
+        }
+
+        .label {
+          margin-right: 8px;
+        }
+
+        .iconNoRes, .iconBlackRes {
+          min-width: 20px;
+          min-height: 20px;
+          border-radius: 100%;
+        }
+
+        .iconNoRes {
+          background-color: #ECECEC;
+        }
+
+        .iconDone {
+          color: #007935;
+        }
+
+        .iconStop {
+          color: #E7440C;
+        }
+
+        .iconBlackRes {
+          color: black;
+        }
+
+        .milles {
+          line-height: 0;
+          font-size: 10px;
+          color: #A2A2A2;
+          text-transform: uppercase;
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+}
+
+.footerDatePicker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+
+  .clearBtn {
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .copyBtn {
+    background-color: #F5EB00;
+  }
+}

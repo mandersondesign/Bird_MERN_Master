@@ -1,0 +1,80 @@
+@import "../../styles/bem.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+#{ bem-block(UserMenu) } {
+  display: inline-block;
+  cursor: pointer;
+}
+
+#{ bem-element(UserMenu, content) } {
+  @include flex(row, center);
+}
+
+#{ bem-element(UserMenu, label) } {
+  margin-left: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 14px;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+#{ bem-element(UserMenu, arrow) } {
+  @include transition(transform, .1s, ease-in);
+  margin-left: 16px;
+  width: 12px;
+  height: 12px;
+  fill: #000;
+}
+
+#{ bem-element(UserMenu, arrow, rotate) } {
+  transform: rotate(180deg);
+}
+
+#{ bem-element(UserMenu, overlay) } {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  min-width: 230px;
+}
+
+#{ bem-element(UserMenu, link) } {
+  @include transition(background, .1s, ease-in);
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.31px;
+  color: #000000;
+  padding: 5px 15px;
+  background: transparent;
+
+  &:hover, &:focus, &:visited, &:visited:hover {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &:hover, &:focus, &:visited:hover {
+    background: #f5f5f5;
+
+    #{ bem-element(UserMenu, linkIcon) } {
+      fill: #F5E106;
+      color: #000;
+    }
+  }
+}
+
+#{ bem-element(UserMenu, linkIcon) } {
+  @include transition(fill color, .1s, ease-in);
+  margin: 0 5px 0 5px;
+  fill: #b8b8b8;
+  color: #868686;
+  width: 24px;
+  height: 24px;
+}

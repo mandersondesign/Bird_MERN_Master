@@ -1,0 +1,15 @@
+@import '../../styles/index';
+
+:global(.svg) {
+	fill: none;
+}
+
+.root {
+	position: relative;
+	cursor: pointer;
+
+	&-disabled {
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+}

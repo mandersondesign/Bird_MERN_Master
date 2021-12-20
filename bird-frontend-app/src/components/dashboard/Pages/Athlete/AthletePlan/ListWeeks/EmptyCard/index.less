@@ -1,0 +1,57 @@
+.emptyWorkout, .emptyWorkoutWeek {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid #ECECEC;
+  border-radius: 7px;
+  height: fit-content;
+
+  .wrapperDate {
+    font-weight: bold;
+
+    .block {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .date {
+      color: #A2A2A2;
+      font-size: 15px;
+    }
+
+    .day {
+      color: black;
+      font-size: 20px;
+    }
+  }
+
+  .body {
+    background-color: red;
+  }
+
+  .newWorkout {
+    background-color: red;
+    padding: 0;
+  }
+
+  .button {
+    flex: 1;
+    text-transform: uppercase;
+    margin-left: 10px;
+
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+.popoverWorkout {
+  
+  div[class~='ant-popover-inner-content'] {
+    border-radius: 7px;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+}

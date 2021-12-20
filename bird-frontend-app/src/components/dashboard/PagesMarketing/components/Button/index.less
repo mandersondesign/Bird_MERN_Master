@@ -1,0 +1,30 @@
+.button {
+  padding: 16px;
+  min-width: 380px;
+  background-color: #FFE840;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  font-weight: 700;
+  line-height: 12px;
+  height: auto;
+  border-color: #FFE840;
+  border-radius: 6px;
+  &:hover, &:focus, &:active {
+    background-color: #ECD73B !important;
+    color: black;
+    border-color: #ECD73B;
+  }
+  @media screen and (max-width: 520px) {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.disabledBtn {
+  color: white !important;
+  background-color: #A0A0A0 !important;
+  &:hover {
+    background-color: #747474 !important;
+  }
+}

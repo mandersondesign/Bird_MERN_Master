@@ -1,0 +1,199 @@
+.mainFormWrapper {
+  .flex {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1000px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  span[class='ant-radio ant-radio-checked'] {
+    span[class='ant-radio-inner'] {
+      border-color: black;
+    }
+  }
+
+  span[class='ant-radio-inner'] {
+    border-color:#979797;
+  }
+
+  span[class='ant-radio-inner']::after {
+    background-color: black;
+  }
+
+  div[class='ant-col ant-col-8 ant-form-item-label'] label {
+    &::after {
+      content: '';
+    }
+  }
+
+  .input {
+    height: 48px;
+    border: solid 1px #ebebeb;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 20px;
+    font-size: 14px !important;
+    background-color: white;
+  }
+
+  span[class~='ant-input-password'] {
+    padding-left: 0;
+    border: solid 1px #ebebeb;
+    background-color: white !important;
+
+    input {
+      border-radius: 0;
+      border: none;
+      box-shadow: none !important;
+      background-color: white !important;
+    }
+  }
+
+  .left {
+    flex: 1;
+    margin-right: 150px;
+
+    @media (max-width: 1200px) {
+      margin-right: 50px;
+    }
+
+    @media (max-width: 1000px) {
+      margin-right: 0;
+    }
+
+    .top {
+      .textLogIn {
+        margin: -20px 0 20px 0;
+        font-weight: bold;
+        font-family: Gotham-Bold;
+
+        .link {
+          color: #006fc2;
+          margin-left: 10px;
+        }
+      }
+
+      @media (max-width: 1000px) {
+        margin-top: 30px;
+      }
+
+      .form {
+        margin-top: 30px;
+
+        div[class='ant-form-item-control has-error'] .input {
+          border: 1px solid red;
+        }
+
+        div[class='ant-col ant-col-8 ant-form-item-label'] label {
+          font-size: 14px;
+          font-weight: bold;
+          color: black;
+        }
+
+        div[class='ant-col ant-col-8 ant-form-item-label'] {
+          width: 100px;
+
+          @media (max-width: 650px) {
+            width: 33.33333333%;
+          }
+        }
+
+        div[class='ant-row ant-form-item'], div[class='ant-row ant-form-item ant-form-item-with-help'] {
+          @media (max-width: 430px) {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            div[class='ant-col ant-col-8 ant-form-item-label'] {
+              width: fit-content;
+            }
+
+            div[class='ant-col ant-col-16 ant-form-item-control-wrapper'] {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom {
+      margin-top: 40px;
+
+      div[class='ant-col ant-col-8 ant-form-item-label'] {
+        width: fit-content;
+      }
+
+      div[class='ant-col ant-col-8 ant-form-item-label'] label {
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        line-height: 20px;
+      }
+
+      div[class='ant-form-explain'] {
+        margin-top: 10px;
+      }
+
+      .itemRadio {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        .group {
+          display: flex;
+          flex-direction: column;
+
+          .wrapperOtherRadio {
+            .input {
+              margin-left: 25px;
+            }
+          }
+
+          .radio {
+            font-size: 14px;
+            margin-top: 8px;
+          }
+          .checkbox {
+            margin: 4px 0;
+            [class='ant-checkbox-inner'] {
+              width: 16px;
+              height: 16px;
+              border: 1px solid #979797;
+              border-radius: unset;
+            }
+            [class='ant-checkbox ant-checkbox-checked'] {
+              &:after {
+                border-color: #000;
+              }
+            }
+            [class='ant-checkbox ant-checkbox-checked'] [class='ant-checkbox-inner'] {
+              background: #fff;
+              border-color: #000;
+              &:after {
+                top: 45%;
+                left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+
+    .line {
+      height: 1px;
+      background-color: #bbbbbb;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+}

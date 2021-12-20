@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "ebb6f1e2-48d4-49fb-9969-447ca183750d",
+		"name": "weeks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/weeks/:id [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/weeks/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"weeks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/weeks/:id [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/weeks/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"weeks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/weeks/:id/publish [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/weeks/:id/publish",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"weeks",
+						":id",
+						"publish"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/weeks/:id/chart [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/weeks/:id/chart",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"weeks",
+						":id",
+						"chart"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/weeks/:id/sort [AUTH][ATHLETE]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workouts\": [\r\n        {\r\n            \"workout_id\": 0,\r\n            \"date\": \"\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/weeks/:id/sort",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"weeks",
+						":id",
+						"sort"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "676a3675-cff4-409d-941c-67c8769df818",
+		"name": "strava",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/strava/redirect [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/redirect",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"redirect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/strava/exchange_token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/exchange_token?state=",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"exchange_token"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "",
+							"description": "NUMBER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/strava/deauthorize [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/deauthorize",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"deauthorize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/strava/test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/test?a=&w=",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "",
+							"description": "NUMBER"
+						},
+						{
+							"key": "w",
+							"value": "",
+							"description": "NUMBER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/strava/webhook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/webhook?hub.mode&hub.verify_token&hub.challenge",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"webhook"
+					],
+					"query": [
+						{
+							"key": "hub.mode",
+							"value": null,
+							"description": "STRING"
+						},
+						{
+							"key": "hub.verify_token",
+							"value": null,
+							"description": "STRING"
+						},
+						{
+							"key": "hub.challenge",
+							"value": null,
+							"description": "STRING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/strava/webhook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"object_type\": \"\",\r\n    \"aspect_type\": \"\",\r\n    \"owner_id\": 0,\r\n    \"object_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/webhook",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/strava/activities [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/activities&date",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"activities&date"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/strava/match [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activity_id\": 0,\r\n    \"workout_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/match",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"match"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/strava/sync [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/strava/sync",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"strava",
+						"sync"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

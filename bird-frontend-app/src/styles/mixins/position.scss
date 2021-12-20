@@ -1,0 +1,39 @@
+/// Applies position styles
+///
+/// @param { string } $position [null]
+/// @param { number } $left [null]
+/// @param { number } $top [null]
+/// @param { number } $right [null]
+/// @param { number } $bottom [null]
+/// @param { number } $width [null]
+/// @param { number } $height [null]
+///
+/// @example
+///
+/// .foo {
+///   @include position(absolute, 0, 0, $width: 100px);
+/// }
+///
+@mixin position($position: null, $left: null, $top: null, $right: null, $bottom: null, $width: null, $height: null) {
+  @if ($position != null) {
+    position: $position;
+  }
+  @if ($left != null) {
+    left: $left;
+  }
+  @if ($top != null) {
+    top: $top;
+  }
+  @if ($right != null) {
+    right: $right;
+  }
+  @if ($bottom != null) {
+    bottom: $bottom;
+  }
+  @if ($width != null) {
+    width: $width;
+  }
+  @if ($height != null) {
+    height: $height;
+  }
+}

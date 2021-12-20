@@ -1,0 +1,644 @@
+{
+	"info": {
+		"_postman_id": "130bc467-369d-4c7e-84e9-3bbb189dc9e5",
+		"name": "users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/users [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users?limit&page&search",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": null,
+							"description": "NUMBER"
+						},
+						{
+							"key": "page",
+							"value": null,
+							"description": "NUMBER"
+						},
+						{
+							"key": "search",
+							"value": null,
+							"description": "STRING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"\",\r\n\t\"last_name\": \"\",\r\n\t\"email\": \"\",\r\n\t\"password\": \"\",\r\n\t\"phone\": \"\",\r\n\t\"user_type_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/users",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:id [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:id [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"email\": \"\",\r\n    \"phone\": \"\",\r\n    \"address\": \"\",\r\n    \"city\": \"\",\r\n    \"state\": \"\",\r\n    \"zip_code\": \"\",\r\n    \"country\": \"\",\r\n    \"is_active\": false,\r\n    \"coach_plan_id\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:id",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me/avatar [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me/avatar",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me/coach [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me/coach",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"coach"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me/info [AUTH][ATHLETE]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"event_id\": 0,\r\n    \"event_type_id\": 0,\r\n    \"race_name\": \"\",\r\n    \"comment\": \"\",\r\n    \"level_id\": 0,\r\n    \"date\": \"\",\r\n    \"past_experience_id\": 0,\r\n    \"miles_per_week_id\": 0,\r\n    \"long_distance_id\": 0,\r\n    \"body.personal_goal_id\": 0,\r\n    \"goal\": {\r\n        \"type\": \"\",\r\n        \"value\": \"\"\r\n    },\r\n    \"days\": [],\r\n    \"personal_record\": {\r\n        \"k_five\": \"\",\r\n\t\t\"k_ten\": \"\",\r\n\t\t\"half_marathon\": \"\",\r\n\t\t\"marathon\": \"\"\r\n    },\r\n    \"custom_questions\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me/info",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me/info [AUTH][ATHLETE]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"event_id\": 0,\r\n    \"event_type_id\": 0,\r\n    \"race_name\": \"\",\r\n    \"comment\": \"\",\r\n    \"level_id\": 0,\r\n    \"date\": \"\",\r\n    \"past_experience_id\": 0,\r\n    \"miles_per_week_id\": 0,\r\n    \"long_distance_id\": 0,\r\n    \"body.personal_goal_id\": 0,\r\n    \"goal\": {\r\n        \"type\": \"\",\r\n        \"value\": \"\"\r\n    },\r\n    \"days\": [],\r\n    \"personal_record\": {\r\n        \"k_five\": \"\",\r\n\t\t\"k_ten\": \"\",\r\n\t\t\"half_marathon\": \"\",\r\n\t\t\"marathon\": \"\"\r\n    },\r\n    \"custom_questions\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me/info",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me/password [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"old_password\": \"\",\r\n    \"new_password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me/password",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users//me/accept_policy [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users//me/accept_policy",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"",
+						"me",
+						"accept_policy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me/sms_notifications [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"is_sms_enabled\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me/sms_notifications",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"sms_notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me/push_notification [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me/push_notification",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"push_notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me/push_notification [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/v1/users/me/push_notification",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"push_notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:alias/info [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:alias/info",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":alias",
+						"info"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:alias/plan [AUTH]",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozMjMzLCJzZXNzaW9uX2lkIjo2ODk0OCwiaWF0IjoxNjI2OTg2MTAwfQ.5LB3orPCra1uvvPe27E1ibO0ba1HaftN4BcB5UNjlyE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:alias/plan?include_inactive=0",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":alias",
+						"plan"
+					],
+					"query": [
+						{
+							"key": "include_inactive",
+							"value": "0"
+						}
+					],
+					"variable": [
+						{
+							"key": "alias",
+							"value": "me"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:alias/plan/meta [AUTH]",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDU3LCJzZXNzaW9uX2lkIjo3MDE5LCJpYXQiOjE2MjUyNjEyMTF9.WoUCX66qBY6B3PPVX-mMGDhOwDjxHspqhGLXxFcZws4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:alias/plan/meta",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":alias",
+						"plan",
+						"meta"
+					],
+					"variable": [
+						{
+							"key": "alias",
+							"value": "me"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:alias/plan/chart [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:alias/plan/chart",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":alias",
+						"plan",
+						"chart"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:alias/plan/chart_by_day [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:alias/plan/chart_by_day",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":alias",
+						"plan",
+						"chart_by_day"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:alias/weeks/current [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:alias/weeks/current",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":alias",
+						"weeks",
+						"current"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/:alias/weeks/number/:week_number [AUTH]",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/v1/users/:alias/weeks/number/:week_number",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						":alias",
+						"weeks",
+						"number",
+						":week_number"
+					],
+					"variable": [
+						{
+							"key": "alias"
+						},
+						{
+							"key": "week_number"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

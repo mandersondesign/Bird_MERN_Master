@@ -1,0 +1,11 @@
+@import "~@helioscompanies/bem-classnames/index";
+@import '~sassdash/index';
+
+@function -helios-bem-block-formatter($name) {
+  @return 'helios-#{ $name }';
+}
+
+$helios-bem-config: bem-config((
+  formatter: get-function(_kebab-case),
+  block-formatter: get-function(-helios-bem-block-formatter)
+)) !default;

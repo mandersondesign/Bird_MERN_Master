@@ -1,0 +1,11 @@
+@import '../../styles/index';
+
+.root {
+	max-width: @screen-xl;
+	margin: 0 auto;
+	padding: 0 @margin-base - 3px;
+
+	@media screen and (max-width: @screen-xs) {
+		padding: 0 @margin-mobile;
+	}
+}

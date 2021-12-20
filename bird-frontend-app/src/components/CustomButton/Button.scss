@@ -1,0 +1,329 @@
+@import "../CustomIcon/Icon-mixins.scss";
+@import "../../styles/bem.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+$button-disabled-color: $grey;
+$button-disabled-background-color: $grey-light;
+
+$button-border-radius: 8px;
+
+$button-default-color: $yellow;
+$button-default-color-focus: #fff;
+$button-default-color-active: #fff;
+$button-default-background-color: transparent;
+$button-default-background-color-focus: $yellow;
+$button-default-background-color-active: $grey-button;
+
+$button-primary-color: #000;
+$button-primary-color-focus: #000;
+$button-primary-color-active: #000;
+$button-primary-background-color: $yellow;
+$button-primary-background-color-focus: $grey-button;
+$button-primary-background-color-active: $grey-button;
+
+$button-secondary-color: $grey;
+$button-secondary-color-focus: #fff;
+$button-secondary-color-active: #fff;
+$button-secondary-background-color: $grey-lightest;
+$button-secondary-background-color-focus: $grey;
+$button-secondary-background-color-active: $grey-dark;
+
+$button-danger-color: #fff;
+$button-danger-color-focus: #fff;
+$button-danger-color-active: #fff;
+$button-danger-background-color: $red;
+$button-danger-background-color-focus: $red-dark;
+$button-danger-background-color-active: $red-darkest;
+
+@mixin -helios-button-disabled {
+  background-color: $button-disabled-background-color;
+  border-color: $button-disabled-background-color;
+  color: $button-disabled-color;
+
+  #{ bem-element(Button, icon) } {
+    @include helios-icon-colors(default);
+  }
+}
+
+#{ bem-block(Button) } {
+  @include transition(border-color background-color color, .1s, ease-in);
+    font-family: Celias-Bold;
+    text-align: center;
+    color: #000000;
+    text-transform: uppercase;
+  justify-content: space-around;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: $button-border-radius;
+  font-stretch: normal;
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.27px;
+  outline-width: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-width: 2px;
+  border-style: solid;
+}
+
+#{ bem-block(Button, disabled) } {
+  cursor: not-allowed;
+}
+
+#{ bem-element(Button, icon, null, bem-element(Iconed, icon, left))} {
+  margin-right: 5px;
+}
+
+#{ bem-element(Button, icon, null, bem-element(Iconed, icon, right))} {
+  margin-left: 5px;
+}
+
+#{ bem-element(Button, icon, null, bem-element(Iconed, icon, top))} {
+  margin-bottom: 5px;
+}
+
+#{ bem-element(Button, icon, null, bem-element(Iconed, icon, bottom))} {
+  margin-top: 5px;
+}
+
+#{ bem-block(Button, null, bem-block(Sized, small)) } {
+  min-height: 20px;
+  padding: 2px;
+  font-size: 13px;
+  border-width: 2px;
+  line-height: 16px;
+}
+
+#{ bem-block(Button, rounded, bem-block(Sized, small)) } {
+  border-radius: 10px;
+}
+
+#{ bem-block(Button, null, bem-block(Sized, medium)) } {
+  min-height: 38px;
+  padding: 5px;
+  font-size: 13px;
+}
+
+#{ bem-block(Button, rounded, bem-block(Sized, medium)) } {
+  border-radius: 28px;
+}
+
+#{ bem-block(Button, null, bem-block(Sized, large)) } {
+  min-height: 46px;
+  min-width: 170px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 34px;
+}
+
+#{ bem-block(Button, rounded, bem-block(Sized, large)) } {
+  border-radius: 27px;
+}
+
+// Default
+#{ bem-block(Button, default) } {
+  background-color: $button-default-background-color;
+  border-color: $button-default-background-color-focus;
+  color: $button-default-color;
+
+  #{ bem-element(Button, icon) } {
+    @include helios-icon-colors(active);
+  }
+
+  &:hover, &:focus {
+    background-color: $button-default-background-color-focus;
+    color: $button-default-color-focus;
+
+    #{ bem-element(Button, icon) } {
+      @include helios-icon-colors(active, true);
+    }
+  }
+
+  &:active {
+    background-color: $button-default-background-color-active;
+    border-color: $button-default-background-color-active;
+    color: $button-default-color-active;
+
+    #{ bem-element(Button, icon) } {
+      @include helios-icon-colors(active, true);
+    }
+
+    &:hover, &:focus {
+      #{ bem-element(Button, icon) } {
+        @include helios-icon-colors(active, true);
+      }
+    }
+  }
+}
+
+#{ bem-block(Button, (default, disabled)) } {
+  @include -helios-button-disabled;
+}
+
+// Primary
+#{ bem-block(Button, primary) } {
+  background-color: $button-primary-background-color;
+  border-color: $button-primary-background-color;
+  color: $button-primary-color;
+
+  #{ bem-element(Button, icon) } {
+    @include helios-icon-colors(active, true);
+  }
+
+  &:hover, &:focus {
+    background-color: $button-primary-background-color-focus;
+    border-color: $button-primary-background-color-focus;
+    color: $button-primary-color-focus;
+  }
+
+  &:active {
+    background-color: $button-primary-background-color-active;
+    border-color: $button-primary-background-color-active;
+    color: $button-primary-color-active;
+  }
+}
+
+#{ bem-block(Button, (primary, disabled)) } {
+  @include -helios-button-disabled;
+}
+
+
+// Secondary
+#{ bem-block(Button, secondary) } {
+  background-color: $button-secondary-background-color;
+  border-color: $button-secondary-background-color;
+  color: $button-secondary-color;
+
+  #{ bem-element(Button, icon) } {
+    @include helios-icon-colors(default);
+  }
+
+  &:hover, &:focus {
+    background-color: $button-secondary-background-color-focus;
+    border-color: $button-secondary-background-color-focus;
+    color: $button-secondary-color-focus;
+
+    #{ bem-element(Button, icon) } {
+      @include helios-icon-colors(default, true);
+    }
+  }
+
+  &:active {
+    background-color: $button-secondary-background-color-active;
+    border-color: $button-secondary-background-color-active;
+    color: $button-secondary-color-active;
+
+    #{ bem-element(Button, icon) } {
+      @include helios-icon-colors(default, true);
+    }
+  }
+}
+
+#{ bem-block(Button, (secondary, disabled)) } {
+  @include -helios-button-disabled;
+}
+
+// Danger
+#{ bem-block(Button, danger) } {
+  background-color: $button-danger-background-color;
+  border-color: $button-danger-background-color;
+  color: $button-danger-color;
+
+  #{ bem-element(Button, icon) } {
+    @include helios-icon-colors(danger, true);
+  }
+
+  &:hover, &:focus {
+    background-color: $button-danger-background-color-focus;
+    border-color: $button-danger-background-color-focus;
+    color: $button-danger-color-focus;
+  }
+
+  &:active {
+    background-color: $button-danger-background-color-active;
+    border-color: $button-danger-background-color-active;
+    color: $button-danger-color-active;
+  }
+}
+
+#{ bem-block(Button, (danger, disabled)) } {
+  @include -helios-button-disabled;
+}
+// Third
+#{ bem-block(Button, plans) } {
+  background-color: $button-secondary-background-color;
+  border-color: $button-secondary-background-color;
+  color: $button-primary-color;
+
+  #{ bem-element(Button, icon) } {
+    @include helios-icon-colors(active, true);
+  }
+
+  &:hover, &:focus {
+    background-color: $button-primary-background-color-focus;
+    border-color: $button-primary-background-color-focus;
+    color: $button-primary-color-focus;
+  }
+
+  &:active {
+    background-color: $button-primary-background-color-active;
+    border-color: $button-primary-background-color-active;
+    color: $button-primary-color-active;
+  }
+}
+
+#{ bem-block(Button, (plans, disabled)) } {
+  @include -helios-button-disabled;
+}
+
+// Link
+#{ bem-block(Button, link) } {
+  border-radius: 0;
+  background-color: transparent;
+  border-color: transparent;
+  color: $grey;
+
+  #{ bem-element(Button, icon) } {
+    @include helios-icon-colors(default);
+  }
+
+  &:hover, &:focus {
+    border-color: transparent;
+    color: $black;
+
+    #{ bem-element(Button, icon) } {
+      @include helios-icon-colors(active);
+    }
+  }
+
+  &:active {
+    border-color: transparent;
+    color: $black;
+
+    #{ bem-element(Button, icon) } {
+      @include helios-icon-colors(active);
+    }
+  }
+}
+
+#{ bem-block(Button, link disabled) } {
+  @include -helios-button-disabled;
+  background-color: transparent;
+  border-color: transparent;
+  color: $grey-light;
+
+  #{ bem-element(Button, icon) } {
+    @include helios-icon-colors(default);
+  }
+}
+
+#{ bem-block(Button, link, bem-block(Sized, small)) },
+#{ bem-block(Button, link, bem-block(Sized, medium)) },
+#{ bem-block(Button, link, bem-block(Sized, large)) } {
+  padding: 0 5px;
+}

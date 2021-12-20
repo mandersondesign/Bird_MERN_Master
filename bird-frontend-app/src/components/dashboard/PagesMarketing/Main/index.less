@@ -1,0 +1,229 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  background-color: #F7F7F7;
+
+  @media screen and (max-width: 1090px) {
+    background-color: #FFFFFF;
+  }
+
+  .logoWrapper {
+    width: 60%;
+    padding-top: 50px;
+    padding-left: 80px;
+    background-color: #FFFFFF;
+
+    @media screen and (max-width: 590px) {
+      padding-left: 20px;
+    }
+  }
+
+  .logo {
+    width: 80px;
+    height: 30px;
+    object-fit: cover;
+    margin-bottom: 35px;
+    cursor: pointer;
+  }
+}
+
+.wrapperMain {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 1090px) {
+    flex-direction: column-reverse;
+  }
+
+  .left {
+    flex: 60%;
+    min-width: 654px;
+    padding: 0 80px 20px 80px;
+
+    @media screen and (max-width: 590px) {
+      padding: 0 20px;
+      min-width: 0px;
+    }
+  }
+
+  .right {
+    height: 100vh;
+    flex: 40%;
+    background-color: #F7F7F7;
+    padding: 0px 80px;
+
+    @media screen and (max-width: 1090px) {
+      height: auto;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 590px) {
+      padding: 30px 20px;
+    }
+  }
+
+  .breadcrumbNav {
+    margin-bottom: 50px;
+    font-size: 14px;
+
+    @media screen and (max-width: 1090px) {
+      margin-bottom: 10px;
+    }
+
+    .breadcrumbPast {
+      font-weight: bold;
+
+      a {
+        color: #000000;
+      }
+    }
+  }
+
+  .mainTitle {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 34px;
+    color: #000000;
+    font-weight: bold;
+    margin-top: 64px;
+    padding-bottom: 16px;
+  }
+
+  .formWrapper {
+    display: flex;
+    flex-direction: column;
+
+    .wrapperHeadTitleEdit {
+      width: 40%;
+    }
+
+    .wrapperExistingPlan {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .existingPlanInfo {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    span.planName {
+      font-weight: 700;
+    }
+
+    label[class='ant-checkbox-wrapper'] {
+      margin-top: 10px;
+    }
+
+    label[class='ant-checkbox-wrapper'] span {
+      font-weight: 400;
+      color: black;
+      line-height: 25px;
+      font-size: 16px;
+    }
+
+    .headTitleEdit {
+      justify-content: space-between;
+    }
+
+    .headTitle {
+      padding-bottom: 16px;
+      justify-content: space-between;
+      @media screen and (max-width: 1090px) {
+        justify-content: space-between;
+        margin-top: 33px;
+      }
+      @media screen and (max-width: 590px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 9px;
+      }
+
+      .title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 20px;
+        white-space: nowrap;
+        color: #000000;
+
+        @media screen and (max-width: 590px) {
+          margin-bottom: 10px;
+        }
+      }
+
+      span {
+        font-weight: 700;
+        font-weight: bold;
+        cursor: pointer;
+        color: #000000;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .titleLink {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #000000;
+        font-weight: normal;
+        margin-left: 70px;
+        @media screen and (max-width: 590px) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .bottomButtons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .btnBack {
+        font-weight: bold;
+        cursor: pointer;
+
+        @media screen and (max-width: 590px) {
+          order: 2;
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .btnSubmit {
+        height: 65px;
+        min-width: 220px;
+
+        @media screen and (max-width: 590px) {
+          flex: 1;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+span[class='ant-checkbox'] {
+  span[class='ant-checkbox-inner'] {
+    border: 1px solid #000000;
+  }
+}
+
+span[class='ant-checkbox ant-checkbox-checked'] {
+  span[class='ant-checkbox-inner'] {
+    background-color: #F5E106 !important;
+    border-color: #F5E106 !important;
+  }
+}

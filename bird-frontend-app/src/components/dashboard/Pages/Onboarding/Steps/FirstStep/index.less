@@ -1,0 +1,115 @@
+.firstStep {
+  margin-top: 30px;
+  min-height: 70vh;
+    height: auto;
+
+  .top {
+    font-family: Celias-Regular;
+    color: #515151;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .section {
+    margin-top: 30px;
+
+    .title {
+  font-family: SFProText-Bold;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: -0.1px;
+  color: #000000;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .upload {
+      display: flex;
+      align-items: center;
+
+      .userAvatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 25%;
+      }
+
+      
+    }
+
+    
+    .input, .inputAdd {
+      
+      resize: none;
+      background-color: #f9f9f9;
+      font-size: 14px;
+      padding-left: 10px;
+      font-family: SFProText-Regular;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.36;
+      letter-spacing: -0.1px;
+      color: #000000;
+    }
+
+    .wrapperSpecialties {
+      display: flex;
+      flex-direction: column;
+
+      .inputAdd {
+        width: 430px;
+        margin-bottom: 10px;
+      }
+      .deleteBtn {
+        margin-left: 5px;
+      }
+      .deleteBtn:hover {
+        cursor: pointer;
+      }
+      
+    }
+
+    .addBtn {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+      
+
+      .text {
+        font-family: SFProText-Heavy;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: #a0a0a0;
+        margin-left: 7px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .input, .inputAdd {
+      width: 80vw !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .firstStep {
+    padding: 0 8px;
+    height: auto;
+  }
+}

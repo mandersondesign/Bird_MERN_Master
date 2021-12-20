@@ -1,0 +1,388 @@
+@import '../../styles/index';
+@import '../../styles/mixins';
+@import '../../styles/variables.less';
+
+body { font-size: 16px; }
+input, select { font-size: 100%; }
+
+.subContainer {
+  padding: 0 30px;
+  width: 100%;
+
+  .rootHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: @screen-sm) {
+    flex-direction: column !important;
+  }
+}
+
+.rootTitle {
+  font-family: Celias-Bold;
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.69;
+  letter-spacing: -1.2px;
+  color: #000000;
+}
+
+.wrapperActions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flex_link {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+
+.wrapperInputAdmin {
+  div[class~='ant-form-item'] {
+    margin-bottom: 0;
+  }
+}
+
+.flex_link:visited {
+  color: #3831ff;
+}
+
+.rootContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  max-width: 360px;
+  width: 100%;
+}
+
+.userForm {
+  margin-top: 60px;
+}
+
+.formInput {
+  height: 40px;
+  margin-bottom: 38px;
+}
+
+.searchIcon {
+  margin-top: 10px;
+}
+
+.pagination {
+  margin-top: 32px;
+  margin-bottom: 40px;
+  text-align: right;
+}
+
+.doubleItems {
+  display: flex;
+  justify-content: space-evenly;
+
+  .iconDel {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.autoComplete {
+  width: 47%;
+}
+
+.userTypeTitle {
+  width: 47%;
+}
+
+.iconComments {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.editLink {
+  font-family: Celias-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #3831ff;
+}
+
+.signInAsLink {
+  transform: rotate(-90deg);
+}
+
+.editIcon {
+  margin-right: 4px;
+}
+
+.tableColumns {
+  font-family: Celias-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #454545;
+}
+
+.tableRowTd {
+  font-family: Celias-Regular;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #454545;
+}
+
+.typeButton {
+  width: 80px;
+  height: 24px;
+  border-radius: 4px;
+  font-family: Celias-Regular;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.typeAdmin {
+  color: #484b73;
+  background-color: #f5f5f5;
+  border: solid 1px #c3c3cc;
+}
+
+.typeCoach {
+  color: #3831ff;
+  background-color: #cadbff;
+  border: solid 1px #636eff;
+}
+
+.typeAthlete {
+  color: #eb711a;
+  background-color: #ffffdd;
+  border: solid 1px #f0c543;
+}
+.typeFree {
+  color: #484b73;
+  background-color: #f5f5f5;
+  border: solid 1px #c3c3cc;
+}
+
+.typeCore {
+  color: #484b73;
+  background-color: #f5f5f5;
+  border: solid 1px #c3c3cc;
+}
+
+.typePremium {
+  color: #484b73;
+  background-color: #f5f5f5;
+  border: solid 1px #c3c3cc;
+}
+
+.doNotBreakWords {
+  word-break: normal !important;
+}
+
+.button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 170px;
+  height: fit-content;
+  border-radius: 16px;
+  padding: 15px;
+  background-color: @custom-yellow;
+
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.17px;
+  text-align: center;
+  color: #000000;
+  border: unset;
+}
+
+.button:visited, .button:hover, .button:visited:hover {
+  color: #000000;
+  text-decoration: unset;
+}
+
+.button:active {
+  color: #000000;
+  background-color: @custom-yellow;
+}
+
+.formButtons {
+  width: 47%;
+  margin: unset;
+  min-width: 120px;
+}
+
+.cancelButton {
+  border: solid 1px #f5e106;
+  background-color: #ffffff;
+}
+
+.contentContainer{
+  flex: 1;
+  align-items: flex-start;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 20px;
+  height: fit-content;
+  min-width: 500px;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: @screen-sm) {
+    min-width: auto;
+  }
+}
+
+.wrapperUserLink {
+  display: flex;
+  align-items: center;
+
+  .iconWarning {
+    margin-left: 8px;
+    font-size: 20px;
+    color: #E7450D;
+  }
+}
+
+.userLink:hover{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wrapperSpinMessages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popoverMessages {
+  width: 300px;
+  
+  div[class='ant-popover-title'] {
+    font-weight: bold;
+  }
+
+  div[class='ant-popover-inner-content'] {
+    max-height: 300px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #D8D8D8;
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background-color: #D8D8D8;
+    }    
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  .icon {
+    cursor: pointer;
+  }
+
+  .hiddenIcon {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  > * {
+    margin-right: 15px;
+    height: 20px;
+  }
+}
+
+.wrapperMessages {
+
+  .message {
+    align-items: flex-start;
+  }
+
+  .messageRight {
+    align-items: flex-end;
+  }
+
+  .message, .messageRight {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    .date {
+      font-size: 12px;
+      color: #A3A3A3;
+      font-weight: bold;
+    }
+
+    .textMessage {
+      width: 80%;
+      word-break: break-word;
+      margin-top: 5px;
+      background-color: #ECECEC;
+      padding: 5px 9px;
+      border-radius: 7px;
+      color: #010101;
+    }
+  }
+}
+
+
+.hoherType {
+  color: @color-nav-link;
+}
+.hoherType:visited {
+  color: @color-nav-link;
+}
+.hoherType:hover {
+  color: @hover-color-nav-link;
+}
+
+.hoherType:visited:hover {
+  color: @hover-color-nav-link;
+}

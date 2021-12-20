@@ -1,0 +1,165 @@
+.display {
+  display: flex;
+  align-items: center;
+}
+
+li[class~='ant-dropdown-menu-item-active']:hover {
+  background-color: #f5e106;
+}
+
+.wrapperHeader, .wrapperHeaderAdmin {
+  justify-content: space-between;
+  padding: 50px 30px;
+  &:extend(.display);
+
+  .titles {
+    &:extend(.display);
+
+    .title {
+      font-family: SFProDisplay-Black;
+      font-size: 15px;
+      color: #000000;
+      margin-left: 10px;
+    }
+  }
+
+  .userImages {
+    &:extend(.display);
+    &:hover {
+      cursor: pointer;
+    }
+
+    .userAvatar {
+      height: 40px;
+      width: 40px;
+      border-radius: 25%;
+      object-fit: cover;
+    }
+    .userLogo {
+      height: 40px;
+      width: 40px;
+      border-radius: 25%;
+      object-fit: cover;
+      border: 1px solid #e2e2e2;
+      border-radius: 25%;
+    }
+
+    .userName {
+      margin-left: 10px;
+    }
+
+    .logoutButton {
+      margin-left: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .wrapperLink {
+    font-size: 30px;
+    font-family: SFProDisplay-Light;
+    font-weight: normal;
+
+    span {
+      color: #ECECEC;
+      margin: 0 15px;
+    }
+
+    .item {
+      margin-right: 15px;
+
+      &:hover {
+        text-decoration: none;
+        color: black !important;
+      }
+    }
+  }
+}
+
+.wrapperHeaderAdmin {
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-bottom: 1px solid #EDEDED;
+  &:extend(.display);
+
+  .wrapperLogo {
+    img {
+      width: 60px;
+    }
+  }
+}
+
+div[class~='userImagesOverlay'] ul {
+  min-width: 130px;
+  overflow: hidden;
+
+  li {
+    text-align: center;
+  }
+}
+.adminImages {
+  &:extend(.display);
+  &:hover {
+    cursor: default;
+  }
+  .adminLogout {
+    margin-left: 5px;
+  }
+  .adminLogout:hover {
+    cursor: pointer;
+  }
+  .adminAvatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 25%;
+    object-fit: cover;
+    border: 1px solid #e2e2e2;
+    border-radius: 50% !important;
+    margin-right: 10px;
+  }
+}
+
+:global(.ant-tooltip-inner) {
+  background-color: #ffffff;
+  font-family: SFProText-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: -0.1px;
+  color: #000000;
+}
+span[class~='ant-layout-sider-zero-width-trigger'] {
+  top: 95px;
+}
+
+@media screen and (min-width: 800px) {
+  .wrapperHeader, .wrapperHeaderAdmin {
+    .titles {
+      .title {
+        font-size: 30px !important;
+      }
+      .subTitle {
+        font-size: 30px !important;
+      }
+    }
+  }
+}
+@media screen and (min-width: 400px) {
+  .wrapperHeader, .wrapperHeaderAdmin {
+    .titles {
+      .title {
+        font-size: 20px;
+      }
+      .subTitle {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+div[class~='ant-tooltip-arrow']::before {
+  background-color: #ffffff;
+}
